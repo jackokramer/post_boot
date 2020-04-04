@@ -27,3 +27,17 @@ function swapTowardCenter(arr){
 
 console.log(swapTowardCenter([2,3,5,62,2,6,7]));
 console.log(swapTowardCenter(['pizza',3,5,62,2,'chicken nuggets',7]));
+
+//Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9].
+
+// Outlook Negative - Given an array create and return an new one containing all values provided by the array, made negative
+
+function negativeMaker(arr){
+    var newArr = [];
+    for(var p =0; arr.length>p; p++){
+        if(arr[p]>0){
+            arr[p] * -1;
+        }
+    }
+    return newArr;
+}

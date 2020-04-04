@@ -31,6 +31,13 @@ function swapTowardCenter(arr){
 
 //Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9].
 
+function scaleArray(arr, num){
+    for(var t = 0; arr.length>t; t++){
+        arr[t] = arr[t] *num;
+    }
+    return arr;
+}
+console.group(scaleArray([1,2,4,5],9));
 // Outlook Negative - Given an array create and return an new one containing all values provided by the array, made negative
 
 function negativeMaker(arr){

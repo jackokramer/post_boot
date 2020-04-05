@@ -18,7 +18,7 @@ function incrementInSec(arr){
 function previousLengths(arr){
     var strings = [];
     for(var t = 0; arr.length> t; t++){
-        if(arr[t] = ''){
+        if(arr[t] = str){
             arr[t] = arr.length+1;
             console.log(strings);
         }
@@ -26,4 +26,18 @@ function previousLengths(arr){
     return strings;
 }
 
-console.log(previousLengths(['stuff', 'dojo', 'awesome', 4]));
+//console.log(previousLengths(['stuff', 'dojo', 'awesome', 4]));
+
+//Add Seven - Build a function that accepts an array. Return a new array with all the values of the original, but add 7 to each. Do not alter the original array.  Example, addSeven([1,2,3]) should return [8,9,10] in a new array.
+
+function addSeven(arr){
+    var seven = [];
+    for(var z = 0; arr.length>z; z++){
+        if(arr[z]){
+            seven = arr[z] + 7;
+        };
+    }
+    return seven;
+}
+
+console.log(addSeven([1,2,4,5]));

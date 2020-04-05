@@ -16,15 +16,13 @@ function incrementInSec(arr){
 // Previous Lengths - You are passed an array (similar to saying 'takes in an array' or 'given an array') containing strings.  Working within that same array, replace each string with a number - the length of the string at the previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4]. Hint: Can for loops only go forward?
 
 function previousLengths(arr){
-    var strings = [];
-    for(var t = 0; arr.length> t; t++){
-        if(arr[t] = str){
-            arr[t] = arr.length+1;
-            console.log(strings);
+    //var strings = [];
+    for(var t = arr.length -1; 0< t; t--){ // variable is different
+        arr[t] = arr[t-1].length; // just shows empty arrays in each index rather than replacing it with a number
+            //arr[t] = arr.length-t-1;
         }
+        return arr;
     }
-    return strings;
-}
 
 //console.log(previousLengths(['stuff', 'dojo', 'awesome', 4]));
 
@@ -33,11 +31,12 @@ function previousLengths(arr){
 function addSeven(arr){
     var seven = [];
     for(var z = 0; arr.length>z; z++){
-        if(arr[z]){
-            seven = arr[z] + 7;
-        };
+        seven.push(arr[z] + 7);//if(arr[z]){
+            
+        }
+        return seven;
     }
-    return seven;
-}
 
 console.log(addSeven([1,2,4,5]));
+
+// Reverse Array 

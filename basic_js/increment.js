@@ -37,6 +37,17 @@ function addSeven(arr){
         return seven;
     }
 
-console.log(addSeven([1,2,4,5]));
+//console.log(addSeven([1,2,4,5]));
 
-// Reverse Array 
+// Reverse Array - Given an array, write a function that reverses values, in-place. Example ([2,1,4,7,8,5]) would reverse to be ([5,8,7,4,1,2]). Do this without creating a empty temp array. (Hint: you'll need  to swap values).
+
+function reverseArr(arr){
+    for(var t = 0; arr.length/2>t; t++){ // divde arr,length (the length of the argument by 2)
+        var temp = arr[t]; // temp has to be the indez of the array
+        arr[t] = arr[arr.length-1-t]; // subtract 1 first
+        arr[arr.length-1-t] = temp;
+    }
+    return arr;
+}
+
+console.log(reverseArr[2,1,4,7,8,5]);

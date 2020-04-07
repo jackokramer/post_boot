@@ -11,6 +11,24 @@ function outlookNeg(arr){
     return newArr;
 }
 
+// // Always Hungry - Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food".  If no array elements are "food", then print "I'm hungry" once. Example: [1,"food",true, "food"] ==> "yummy" "yummy". [1,2,4,"sleep"] ==> "I'm hungry"
+
+function alwaysHungry(arr){
+    var gotFood = false;
+    for(var b = 0; arr.length>b; b++){
+        if(arr[b] == 'food'){
+             console.log('yummy');
+             gotFood = true;
+        } 
+    }
+        if(gotFood == false){
+        console.log('Im hungry');
+        }
+}
+
+console.log(alwaysHungry(['fix', 'food', 7,12]));
+
+
 // Biggie Size - Given an array, write a function that changes all positive numbers in the array to the string "big".  Example: makeItBig([-1,3,5,-5]) returns that same array, changed to [-1, "big", "big", -5].
 
 function biggieSize(arr){

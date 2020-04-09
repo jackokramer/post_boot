@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script>
+    <scrip type = 'text/js'></script>
     <title>JQuery Practice</title>
     <script>
         $(document).ready(function(){
-            // your jquery here
-            let t = $('h1').html('Geoff');
-            console.log(t);
-        $('#btn_fade').click(function(){
-            $(p.sp).hide();
-            });
+            console.log('document is ready');
+            $('h1').html('Geoff');
+            
+            $('p').click(function(){
+                console.log('h1 is clicked')
+            $('p').hide();
+            } )
         });
     </script>
 </head>
 <body>
     <h1>Play Ball</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, a! Aut ad quis ut magnam dolores, quo officia eaque ipsa culpa similique, sed molestias asperiores nam dolor laborum, deleniti fuga!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid beatae, ipsum, impedit aut repudiandae consequatur ullam ab veniam dolor quod nesciunt ducimus maiores, laudantium tempora vitae ipsam iure tempore!</p>
 </body>
 </html>

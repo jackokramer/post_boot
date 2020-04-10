@@ -12,10 +12,12 @@ function scaleArray(arr, num){
 // factorial
 
 function factorial(arr){
-    for(var t = 0; arr.length > t; t--){
-        arr[t] = arr[t] * arr[t];
+    if(arr > 0 && arr <=1){
+        return 1;
     }
-    return t;
+    else {
+        return arr * factorial(arr-1);
+    }
 }
 
 console.log(factorial(5));

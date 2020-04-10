@@ -7,4 +7,15 @@ function scaleArray(arr, num){
     return arr;
 }
 
-console.log(scaleArray([1,2,5],6));
+//console.log(scaleArray([1,2,5],6));
+
+// factorial
+
+function factorial(arr){
+    for(var t = 0; arr.length > t; t--){
+        arr[t] = arr[t] * arr[t];
+    }
+    return t;
+}
+
+console.log(factorial(5));

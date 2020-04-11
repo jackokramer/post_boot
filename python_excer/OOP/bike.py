@@ -10,5 +10,8 @@ class Bike:
         self.miles +=10
         print(f"You test rode at {self.miles}. How was it?")
     def reverse(self):
-        if self.ride >= 10:
-            self.miles -=5:
+        if self.miles >= 10:
+            self.miles -=5
+    
+bike1 = Bike(400, 25, 10)
+bike2 = Bike(600, 30, 0)

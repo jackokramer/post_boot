@@ -8,6 +8,8 @@
     integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
     crossorigin="anonymous"
 ></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <scrip type = 'text/js'></script>
     <title>JQuery Practice</title>
     <script>
@@ -19,12 +21,34 @@
                 console.log('h1 is clicked')
             $('p').hide();
             } )
+            console.log($);
+            $('input').click(function(){
+                alert('You have submitted your form');
+            });
         });
     </script>
 </head>
 <body>
+    <div class="jumbotron">
+        <h1 class="display-3">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
+                        calling extra attention to featured content or information.</p>
+        <hr class="my-2">
+        <p>It uses utility classes for typography and
+           spacing to space content out within the larger container.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
+        </p>
+      </div>
     <h1>Play Ball</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, a! Aut ad quis ut magnam dolores, quo officia eaque ipsa culpa similique, sed molestias asperiores nam dolor laborum, deleniti fuga!</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid beatae, ipsum, impedit aut repudiandae consequatur ullam ab veniam dolor quod nesciunt ducimus maiores, laudantium tempora vitae ipsam iure tempore!</p>
+
+    <div class="list-group p4 m-5">
+    <form action="/submish">
+            <p>First Name: <input type="text" name="first_name"></p>
+            <p>Last Name: <input type="text" name="last_name"></p>
+            <p>Email <input type="text" name="email"></p>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
 </body>
 </html>

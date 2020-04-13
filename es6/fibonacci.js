@@ -1,9 +1,12 @@
 function darthfibonacci(arr){
-    var result = 0;
-    for(var x = 1; arr.length>x; x++){
-        result = arr[x] + arr[x]+1;
+    if(arr === 1){
+        return [0,1]; 
     }
-    return arr;
+    else { var x =  darthfibonacci(arr-1);
+    x.push(x[x.length -1] + x[x.length -2]);
+    return x;
+    }
 }
 
 console.log(darthfibonacci([50]));
+

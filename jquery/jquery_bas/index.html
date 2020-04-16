@@ -8,8 +8,20 @@
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script>
-        $(document).ready(function(){
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.click').click(function(){
+            alert('woody harrleson!')
+        })
+        $('.hide').click(function(){
+            $('.hide').show()
+        })
+        $('.show').click(function(){
+            $('.hide').show()
+        })
+
+
+
     $('button').click(function(){
         $('p').addClass('blue');
         $('div').addClass('important');
@@ -19,14 +31,33 @@
     //}, function(){alert('now invoking the second function')});
 });
     </script>
+    <style type="text/css">
+    .green{
+        color:green;
+    }</style>
     <title>jQuery Practice</title>
 </head>
 <body>
     <div class="jumbotron">
         <div>
+            <legend>Click</legend>
+            <p>Adds a function that occurs when an element is clicked for a through alert.</p>
+            <button class="click">Click</button>
+        </div>
+        <div>
+            <Legend>Hide</Legend>
+            <p>Hodes an element</p>
+            <button class="hide">Click to hide this button</button>
+        </div>
+        <div>
+            <legend>Show</legend>
+            <p>show a hidden function</p>
+            <button class="show">Click to show the previous hidden button.</button>
+        </div>
+        <div>
             <h1 class="text-center p-2 m-2">Add Class</h1>
                 <p class="text-center p-3" id="addclass">Click the button to add a class red to this paragraph</p>
-                <button>Click here</button>
+                <button class="click">Click here</button>
         </div>
         <div>
             <h1 class="text-center p-2 m-2">SlideToggle</h1>

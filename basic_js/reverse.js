@@ -9,18 +9,21 @@ function reverseArr(arr){
     return arr;
 }
 
-console.log(reverseArr([4,3,2,7,17,9,11]));
+//console.log(reverseArr([4,3,2,7,17,9,11]));
 
 // Outlook: Negative - Given an array, create and return a new one containing all the values of the original array, but make them all negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
 
 function outlookNeg(arr){
     let newArr = [];
     for(let t = 0; arr.length>t; t++){
-        if(arr[t]<0){
-            newArr = arr[t] * -1;
+        if(arr[t]>0){
+            arr[t] = arr[t] * -1;
+            newArr.push(arr[t]);
+        } else{
+            newArr.push(arr[t]);
         }
-        return newArr;
     }
+    return newArr;
 }
 
-//console.log(outlookNeg([2,4,5,2, -9, -7, 4]));
+console.log(outlookNeg([2,4,5,2, -9, -7, 4]));

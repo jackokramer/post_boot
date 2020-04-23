@@ -3,10 +3,16 @@ class Cars:
         self.price = price
         self.speed = speed
         self.fuel = fuel
-        self.mileage = mileage
+        self.mileage = 0
         self.tax = tax
     def description(self):
         return '${} and has {}mph and is {} as well as about {}mpgs with a tax of {}'.format(self.price, self.speed, self.fuel, self.mileage, self.tax)
+    def drive(self,miles):
+        self.mileage += miles
+        return self
+    def reverse(self,miles):
+        self.mileage -= miles
+        return self
 
 car1 = Cars(2000, 35, 'full', 15, .12)
 car2 = Cars(2000, 5, 'Not Full', 105, .12)

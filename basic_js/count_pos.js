@@ -35,3 +35,17 @@ function addSeven(arr){
 }
 
 console.log(addSeven([4,5,2,11,-4,5,]));
+
+//Reverse Array - Given an array, write a function that reverses its values, in-place.  Example: reverse([3,1,6,4,2]) returns the same array, but now contains values reversed like so... [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values).
+
+function reverseArr(arr){
+    for(var t = 0; arr.length/2>t ; t++){
+        var temp = arr[t];
+        arr[t] = arr[arr.length - 1 -t];
+        arr[arr.length -1 -t] = temp;
+    }
+    return arr;
+}
+
+console.log(reverseArr['stuff', 1, 7, 79, 'argue'])
+

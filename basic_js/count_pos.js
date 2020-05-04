@@ -47,5 +47,5 @@ function reverseArr(arr){
     return arr;
 }
 
-console.log(reverseArr['stuff', 1, 7, 79, 'argue'])
+console.log(reverseArr(['stuff', 1, 7, 79, 'argue']))
 

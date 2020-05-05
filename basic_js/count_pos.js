@@ -49,3 +49,40 @@ function reverseArr(arr){
 
 console.log(reverseArr(['stuff', 1, 7, 79, 'argue']))
 
+//Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9].
+
+function scaleArr(arr, num){
+    for(let w = 0; arr.length>w; w++){
+        arr[w] = arr[w]*num;
+    }
+    return arr;
+}
+
+console.log(scaleArr([1,3,4,7],5))
+
+//Increment the Seconds - Given an array of numbers arr, add 1 to every other element, specifically those whose index is odd (arr[1], arr[3], arr[5], etc).  Afterward, console.log each array value and return arr.
+
+function incrmentsSec(arr){
+    for(let t = 0; arr.length>t; t+=2){ // add two
+        arr[t]= arr[t]+1;
+        }
+        for(var t = 0; t <arr.length; t++){
+            console.log(arr[t]);
+        }
+    return arr;
+}
+
+console.log(incrmentsSec[(1,3,5,4,6)]);
+
+//Double Vision - Given an array (similar to saying 'takes in an array'), create a function that returns a new array where each value in the original array has been doubled.  Calling double([1,2,3]) should return [2,4,6] without changing the original array.
+
+function doubleVision(arr){
+    let newArra = [];
+    for(let q = 0; q< arr.length; q++){
+        let double = arr[q]*2; // create a variable called double
+        newArra.push(double);// add the push function from double to the new array
+    }
+    return newArra;
+}
+
+console.log(doubleVision([1,2,35,77]));

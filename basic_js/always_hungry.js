@@ -53,4 +53,4 @@ function scaleArray(arr, num){
     return arr;
 }
 
-console.log(scaleArray([1,2,32,1,5]));
+console.log(scaleArray([1,2,32,1,5],7));

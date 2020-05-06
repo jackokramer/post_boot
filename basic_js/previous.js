@@ -1,14 +1,15 @@
 //Previous Lengths - You are passed an array (similar to saying 'takes in an array' or 'given an array') containing strings.  Working within that same array, replace each string with a number - the length of the string at the previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4]. Hint: Can for loops only go forward?
 
 function previousLengths(arr){
-    for(let x = arr.length; x>0; x--){
-        arr[arr.length -1] = arr.length
-        arr[arr.length -1-x] = arr.length
+    for(let x = arr.length-1; x>0; x--){
+        arr[x] = arr[x-1].length;
+        //arr[arr.length -1] = arr.length
+        //arr[arr.length -1-x] = arr.length
     }
     return arr;
 }
 
-//console.log(previousLengths(['hi', 'bye', 'stonehenge', 'circus']))
+console.log(previousLengths(['hi', 'bye', 'stonehenge', 'circus']))
 
 // Count Positives - Given an array of numbers, create a function to replace the last value with the number of positive values found in the array.  Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it.
 
@@ -40,4 +41,4 @@ function incrementSec(arr){
     return arr;
 }
 
-console.log(incrementSec([1,2,4,6]));
+//console.log(incrementSec([1,2,4,6]));

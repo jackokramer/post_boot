@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views ## issues when trying to run the server
+from . import views ## issues when trying to run the server ISSUE lies here
 
 urlpatterns = [
     path('', views.index), ## in the video its at 27:04 it shows rather than admin.site.urls() its include()

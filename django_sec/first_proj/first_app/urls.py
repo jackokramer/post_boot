@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views ## issues when trying to run the server
 
 urlpatterns = [
-    path('', views.index), ## in the video its at 27:04 it shows rather than admin.site.urls() its include()
+    path('admin/', admin.site.urls), ## root route change the path to what ever app you want it to reach to and talk to
 ]

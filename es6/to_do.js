@@ -32,7 +32,7 @@ function beCheerful(){
 //Multiples of Three – but Not All -Using FOR, print multiples of 3 from -300 to 0. Skip -3 and -6.
 
 function multiplesofThree(){
-    for(let w = -300; w<0; w++){
+    for(let w = -300; w<0; w+=3){
         if(w === -3 || -6){
             break
         } else{
@@ -53,13 +53,41 @@ function printInt(){
     }
 }
 
-console.log(printInt())
+//console.log(printInt())
 
 //You Say It’s Your Birthday - If 2 given numbers represent your birth month and day in either order, log "How did you know?", else log "Just another day...." 
 
+function itsYourBirthday(arr){
+    for(let p = 0; arr.length>p; p++){
+        if(arr[x] == 10 || 5){
+            console.log("how`d you know?")
+        } else{
+            console.log('just another day.')
+        }
+    }
+}
+
+console.log(itsYourBirthday(7)); // NOT WORKING
 
 
 // Leap Year --Write a function that determines whether a given year is a leap year. If a year is divisible by four, it is a leap year, unless it is divisible by 100. However, if it is divisible by 400, then it is.
+
+function leapYear(){
+    let year = 2020;
+    for(let q = 0; q>year; q++){
+        if(year % 4 === 0){
+            console.log('leap year')
+        }
+        if(year % 100 === 0){
+            console.log('not a leap year')
+        }
+        if(year % 400===0){
+            console.log("big deal!!")
+        }
+    }
+}
+
+console.log(leapYear());
 
 // Print and Count - Print all integer multiples of 5, from 512 to 4096. Afterward, also log how many there were.
 

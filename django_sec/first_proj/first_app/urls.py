@@ -19,5 +19,5 @@ from . import views ## issues when trying to run the server ISSUE lies here
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls), ## root route change the path to what ever app you want it to reach to and talk to
+    path('admin/', views.index), ## root route change the path to what ever app you want it to reach to and talk to
 ]

@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views ## issues when trying to run the server ISSUE lies here
+
 
 urlpatterns = [
     path('admin/', admin.site.urls), ## root route change the path to what ever app you want it to reach to and talk to

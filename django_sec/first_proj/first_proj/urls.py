@@ -14,9 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from . import views ## issues when trying to run the server ISSUE lies here
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index), ## in the video its at 27:04 it shows rather than admin.site.urls() its include()
+    path('', include('first_app.urls')),
 ]

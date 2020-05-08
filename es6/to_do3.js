@@ -22,3 +22,31 @@ function previousLength(arr){
 }
 
 console.log(previousLength(['stash', 'poor_boy', 'saywer', 'messi']))
+
+//Double Vision - Given an array, create a function to return a new array where each value in the original has been doubled. Calling double([1,2,3]) should return [2,4,6] without changing original.
+
+function doubleVision(arr){
+    let newArr = [];
+    for(let i = 0; arr.length>i; i++){
+        arr[i] = arr[i]*2;
+        newArr.push(arr[i]);
+    }
+    return newArr;
+}
+
+console.log(doubleVision([3,2,1,8]));
+
+// Count Positives -Given an array of numbers, create a function to replace last value with the number of positive values. Example,  countPositives([-1,1,1,1]) changes array to [-1,1,1,3] and returns it.
+
+function countPositives(arr){
+    let count = 0;
+    for(let p = 0; arr.length>p; p++){
+        if(arr[p]>0){
+            count++
+        }
+        arr[arr.length-1]= count
+    }
+    return arr;
+}
+
+console.log(countPositives([-8,9,-77,2,-38, 17]))

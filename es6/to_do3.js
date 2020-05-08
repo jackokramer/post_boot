@@ -50,3 +50,14 @@ function countPositives(arr){
 }
 
 console.log(countPositives([-8,9,-77,2,-38, 17]))
+
+// Scale the Array - Given array arr and number num, multiply each arr value by num, and return the changed arr.
+
+function scalArray(arr, num){
+    for(let c = 0; arr.length>c; c++){
+        arr[c] = arr[c]*num
+    }
+    return arr
+}
+
+console.log(scalArray([4,3,4,76,2,16], 4))

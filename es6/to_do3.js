@@ -61,3 +61,61 @@ function scalArray(arr, num){
 }
 
 console.log(scalArray([4,3,4,76,2,16], 4))
+
+// Outlook: Negative Given an array, create and return a new one containing all the values of the provided array, made negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
+
+function negArr(arr){
+    let newArray = []
+    for(let q = 0; arr.length>q; q++){
+        if(arr[q]>0){
+            arr[q]= arr[q]*-1;
+        }
+        newArray.push(arr[q])
+    }
+    return newArray;
+}
+console.log(negArr([1,4,-55,7,-3, -99]))
+
+//Evens and Odds - Create a function that accepts an array. Every time that array has three odd values in a row, print "That’s odd!" Every time the array has three evens in a row, print "Even more so!"
+
+function evensNOdds(arr){
+    let evens = 0
+    let odds = 0
+    for(let z = 0; arr.length>z; z++){
+        if(arr[z]%2=== 1){
+            odds++
+            evens = 0
+        } else{
+            evens++
+            odds = 0
+        }
+        if(odds === 3){
+            console.log('that`s odd')
+            odds = 0
+        }
+        if(evens === 3){
+            console.log('even more so')
+            evens = 0
+        }
+    }
+    return arr;
+}
+
+console.log(evensNOdds([1,2,4,6,9,9,11,4,2,22]))
+
+//Always Hungry -Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food". If no array elements are "food", then print "I'm hungry" once.
+
+function alwaysHungry(arr){
+    let gotFood = false
+    for(let d = 0; arr.length>d; d++){
+        if(arr[d]==='food'){
+            console.log('delicious')
+            gotFood = true;
+        }
+     } 
+     if(gotfood == false){
+            console.log('Im hungry')
+        }
+        return arr;
+}
+console.log(alwaysHungry(['soft', 11, 'food', 'iniesta', 'procsuitto']))

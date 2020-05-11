@@ -119,3 +119,29 @@ function alwaysHungry(arr){
         return arr;
 }
 //console.log(alwaysHungry(['soft', 11, 'food', 'iniesta', 'procsuitto']))
+
+//Add Seven to Most - Build a function that accepts an array. Return a new array with all values except first, adding 7 to each. Do not alter the original array.
+
+function addSeven(arr){
+    let newSev = []
+    for(let e = 0; arr.length>e; e++){
+        arr[e] = arr[e]+7
+        newSev.push(arr[e])
+    }
+    return newSev
+}
+
+console.log(addSeven([2,4,5,33,88]))
+
+//Reverse Array -Given array, write a function to reverse values, in-place. Example: reverse([3,1,6,4,2]) returns same array, containing [2,4,6,1,3].
+
+function reverseArr(arr){
+    for(let f =0; arr.length>f/2; f++){
+        let teamp = arr[f];
+        arr[f] = arr[arr.length - 1 -f];
+        arr[arr.length - 1 -f] = teamp
+    }
+    return arr;
+}
+
+console.log(reverseArr([2,4, 'food', 'messi', 'mbappe', 5, 9]))

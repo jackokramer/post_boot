@@ -118,4 +118,4 @@ function alwaysHungry(arr){
         }
         return arr;
 }
-console.log(alwaysHungry(['soft', 11, 'food', 'iniesta', 'procsuitto']))
+//console.log(alwaysHungry(['soft', 11, 'food', 'iniesta', 'procsuitto']))

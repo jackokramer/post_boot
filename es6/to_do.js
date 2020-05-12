@@ -91,8 +91,15 @@ console.log(leapYear());
 
 // Print and Count - Print all integer multiples of 5, from 512 to 4096. Afterward, also log how many there were.
 
+function printCount(){
+    for(let z = 512; 4096>z; z++){
+        if(z%5 ===0){
+            console.log(z)
+        }
+    }
+}
 
-
+console.log(printCount())
 // Multiples of Six - Print multiples of 6 up to 60,000, using a WHILE.
 
 

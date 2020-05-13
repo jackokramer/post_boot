@@ -14,3 +14,14 @@ function recursion(doll){
 
 // programing technique big problem dependent on the small problems
 // runs over and over until it reaches the stopping conmdtion (base case)
+
+// factorial is the refresher  4*3*2*1
+
+function factorial(num){
+    if(num == 1 || num ==0)
+        return 1;
+        else
+        return num * factorial(num -1)
+}
+
+console.log(factorial(4))

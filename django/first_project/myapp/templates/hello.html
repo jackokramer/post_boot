@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    {% load static %}
+    <link rel="stylesheet"  type='text/css' href="{% static 'css/style.css' %}"> <!-- NOt changing the color-->
+</head>
+<body>
+    <h1>Hello</h1>
+        <h2>Info from server</h2>
+            <p>Name: {{url_name}}!</p>
+            {% for value in numbers%}
+                <h4>{{value}}</h4>
+            {% endfor %}
+</body>
+</html>

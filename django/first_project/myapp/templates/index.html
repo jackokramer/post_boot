@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>Hello Django</title>
     {% load static %}
     <link rel="stylesheet"  type='text/css' href="{% static 'css/style.css' %}"> 
 </head>
 <body>
-    <h1>Hello this is Django</h1>
+    <h1 class="text-center">Hello this is Django</h1>
+
+    <h2 class="p-5 text-center">SignUp</h2>
+    <form action="/signup" method="get">
+    <p class="p-4 text-center">Name: <input type="text" name="name"></p>
+    <p class="p-4 text-center">Email: <input type="text" name="email"></p>
+    <p class="p-4 text-center">Password: <input type="text" name="password"></p>
+    <p class="p-4 text-center">Confirm Password: <input type="text" name="c_password"></p>
+    <p class="p-4 text-center"><input type="submit" class="mx-auto"></p>
+    </form>
+    <br>
+    <h2 class="text-center">LogIn</h2>
+    <p class="p-3 text-center">Email: <input type="text" name="email" id=""></p>
+    <p class="p-3 text-center">Password: <input type="text" name="password" id=""></p>
+    <p class="text-center"><input type="submit" name="LogIn" id=""></p>
 </body>
 </html>

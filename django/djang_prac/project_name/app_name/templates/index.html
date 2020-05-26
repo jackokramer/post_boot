@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <h1>Here we are</h1>
+    <div id="wrapper">
+        <h1 class="subhead">The Great Number Game</h1>
+        <p class="clsubhead">pick a number between 1 and 10</p>
+    </div>
+    <div id="main_content">
+        <div id="subcontent">
+            <h2>choose your number</h2>
+            <form action="/process_guess" method="POST">
+                {% csrf_token %}
+                <p>User guess <select name="user_guess">
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+
+                </select></p>
+                <p>Name:<input type="text" name="user_name"></p>
+                <input type="submit" value="Take a Guess">
+            </form>
+        </div>
+        <div id="subcontent">
+            <h2>Result</h2>
+            <p>--result goes here---</p>
+        </div>
+    </div>
+</body>
+</html>

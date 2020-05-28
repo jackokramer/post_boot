@@ -9,6 +9,8 @@ def index(request):
 
 def process(request):
     print(request.method)
+    name = request.POST(['user_name'])
+    guess = request.POST(['user_guess'])
     if request.method == "POST":
         com_num = int(random.random()*10)
         if int(request.POST['user_guess'])>com_num:

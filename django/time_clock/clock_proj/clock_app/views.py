@@ -1,5 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
+from time import gmtime, strftime
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    context = {
+        'time': strftime("%Y-%m-%d %H: %M %p", gmtime())
+    } # dictionary of key value pairs
+    return render(request, "index.html", context)

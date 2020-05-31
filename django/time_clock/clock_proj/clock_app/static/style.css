@@ -1,0 +1,13 @@
+body {
+    max-width:  800px;
+    max-height: 750px;
+}
+
+.card {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.card p{
+    font-weight: 500;
+}

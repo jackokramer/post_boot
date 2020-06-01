@@ -7,8 +7,30 @@
     <title>Result</title>
 </head>
 <body>
-    <div class="results">
-        <form action="" method="GET"></form>
+    <div class="container">
+        <h1>Survery results</h1>
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>Nme:</b>
+                    </td>
+                    <td>{request.POST.name}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Location:</b>
+                    </td>
+                    <td>{request.POST.location}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Favorite Language:</b>
+                    </td>
+                    <td>{request.POST.language}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

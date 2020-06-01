@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Ninja gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% 'style.css' %}">
+</head>
+<body>
+    <h1 class="text-center">Ninja Gold</h1>
+
+    <br>
+    <form action="/process_gold" method="post" class="mx-auto m-4 p-3">
+        {% csrf_token %}
+        <input type="hidden" name="place" value="farm">
+        <button type="submit">Farm</button>
+      </form>
+      <br>
+      <form action="/process_gold" method="post" class="mx-auto m-4 p-3">
+        {% csrf_token %}
+        <input type="hidden" name="place" value="casino">
+        <button type="submit">Casino</button>
+      </form>
+      <br>
+      <form action="/process_gold" method="post" class="mx-auto m-4 p-3">
+        {% csrf_token %}
+        <input type="hidden" name="place" value="cave">
+        <button type="submit">Cave</button>
+      </form>
+      <br>
+      <form action="/provess_gold" method="post" class="mx-auto m-4 p-3">
+        {% csrf_token %}
+        <input type="hidden" name="place" value="house">
+        <button type="submit">House</button>
+      </form>
+</body>
+</html>

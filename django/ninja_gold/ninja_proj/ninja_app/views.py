@@ -1,5 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    if 'gold' in request.session:
+        return render(request, 'index.html')
+    else:
+        request.session['gold'] = 0
+
+        return render(request, "index.html")
+
+def new(request):
+    return render(request, 'new.html')
+
+def process(request):
+    ## determine which place user submitted
+    print(request.POST['place'])
+    if request.POST['place'] == 'casino':
+        request.session['gold'] -= 50
+        request.session['result'] = 'You lost money'
+        print('Gone gambling')
+    elif request.POST['place'] == 'farm':
+        request.session['gold'] +=50
+        request.session['result'] = 'You worked hard good job'
+        print('went farming')
+    elif request.POST['place'] == 'cave':
+        request.session['gold'] +=15
+        request.session['result'] = 'You went primal'
+        print('gone primal')
+    elif request.POST['place'] == 'house':
+        request.session['gold'] +=20
+        print('goin home')
+    ## affect gold accordingly
+    return redirect('/')

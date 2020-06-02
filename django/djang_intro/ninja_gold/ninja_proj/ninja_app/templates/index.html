@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Ninja gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-center">Ninja Gold</h1>
+        <H2 class="text-center">Current Session {{request.session.gold}}</H2>
+        <h4 class="text-center">{{request.session.result}}</h4>
+    </div>
+    <br>
+    <div class="forms">
+        <form action="/process_gold" method="post" class="form mx-auto m-4 p-3">
+            {% csrf_token %}
+            <p>Add + 100</p>
+            <input type="hidden" name="place" value="farm">
+            <button type="submit">Farm</button>
+        </form>
+        <br>
+        <form action="/process_gold" method="post" class="form mx-auto m-4 p-3">
+            {% csrf_token %}
+            <p>Lose - 100</p>
+            <input type="hidden" name="place" value="casino">
+            <button type="submit">Casino</button>
+        </form>
+        <br>
+        <form action="/process_gold" method="post" class="form mx-auto m-4 p-3">
+            {% csrf_token %}
+            <p>gain a bit + 15</p>
+            <input type="hidden" name="place" value="cave">
+            <button type="submit">Cave</button>
+        </form>
+        <br>
+        <form action="/provess_gold" method="post" class="form mx-auto m-4 p-3">
+            {% csrf_token %}
+            <p>Go rest + 20</p>
+            <input type="hidden" name="place" value="house">
+            <button type="submit">House</button>
+        </form>
+        <form action="/clear" method="post" class="text-center">
+            {% csrf_token %}
+            <input type="submit" value="clear">
+        </form>
+    </div>
+    <div class="activity">
+        <p class="text-center">{{request.session.result}}</p>
+    </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-import random
+import random ## where do you add random in lines 16-35
 
 # Create your views here.
 def index(request):
@@ -32,4 +32,8 @@ def process(request):
         request.session['gold'] +=20
         print('goin home')
     ## affect gold accordingly
+    return redirect('/')
+def clear(clear):
+    print(request.post['session cleared'])
+    session.clear() ## doesn't clear sesssion
     return redirect('/')

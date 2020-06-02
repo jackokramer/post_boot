@@ -1,14 +1,18 @@
 .form{
-    display: inline-block;
     max-height: 300px;
     max-width: 300px;
     background-color: aquamarine;
     padding: 50px;
     margin-left: 60px;
+    height: 200px;
+    width: 210px;
+    margin-right: 15px;
+    border-style: solid 2px black;
 }
 
 .header{
     text-align: center;
+    border-style: solid 2px black;
     max-width: 700px;
     padding-left: 400px;
 }
@@ -21,4 +25,14 @@
 .header h2{
     padding: 5px;
     margin: 10px;
+}
+
+forms{ 
+    display: inline-block;
+    border-style: solid 2px black;
+}
+
+.activity{
+    max-width: 700px;
+    border-style: solid 2px black;
 }

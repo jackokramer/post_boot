@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="head text-center">
+        <h2>Fill Out the form</h2>
+    </div>
+        <form action="/process" method="post">
+            {% csrf_token %}
+        <p>Name: <input type="text" name="name"></p>
+        <p>Language: <select name="langauge">
+            <option value="python">Python</option>
+            <option value="ruby">ruby</option>
+            <option value="java">Java</option>
+            <option value="javascript">Javascript</option>
+            <option value="c">C</option>
+        </select></p>
+        <p>Location: <select name="language">
+            {% csrf_token %}
+            <option value="burbank">Burbank</option>
+            <option value="chicago">Chicago</option>
+            <option value="oakland">Oakland</option>
+            <option value="san_jose">San Jose</option>
+            <option value="seattle">Seattle</option>
+            <option value="dc">Washington DC</option>
+        </select></p>
+        <textarea name="" id="" cols="30" rows="2">Comments</textarea>
+        <input type="submit" value="View User">
+        </form>
+        <br> 
+         
+
+</body>
+</html>

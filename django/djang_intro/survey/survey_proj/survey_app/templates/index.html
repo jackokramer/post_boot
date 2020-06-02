@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survery</title>
+</head>
+<body>
+    <h1>Fill Out Form</h1>
+
+    <form action="/process" method="POST">
+        {% csrf_token %}
+        <p>Name: <input type="text" name="fullname"></p>
+        <p>Location: <select name="location">
+            <option value="san_jose">San Jose</option>
+            <option value="burbank">Burbank</option>
+            <option value="seattle">Seattle</option>
+            <option value="chicago">Chicago</option>
+            <option value="miami">Miami</option>
+        </select></p>
+        <p>Language: <select name="language">
+            <option value="ruby">Ruby</option>
+            <option value="python">Python</option>
+            <option value="mean">Mean</option>
+            <option value="c#">C#</option>
+            <option value="javascript">Javascript</option>
+        </select></p>
+        <textarea name="comments" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="View User">
+    </form>
+</body>
+</html>

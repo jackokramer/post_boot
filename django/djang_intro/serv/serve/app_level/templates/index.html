@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static style.css %}">
+    <title>Serve</title>
+</head>
+<h1>Fill Out Form</h1>
+<body>
+    <form action="/process" method="POST" class="form">
+        {% csrf_token %}
+    <p>First Name: <input type="text" value="first_name" name="first_name"></p>
+    <p>Last Name:<input type="text" value="last_name" name="last_name"></p>
+    <p> Location:
+            <select name="location">
+            <option value="san jose">San Jose</option>
+            <option value="seattle">Seattle</option>
+            <option value="tulsa">Tulsa</option>
+            <option value="boston">Boston</option>
+            <option value="chicago">Chicago</option>
+            <option value="miami">Miami</option>
+            <option value="los_angeles">Los Angeles</option>
+        </select>
+    </p>
+    <p class="text_center">Language:
+        <select name="language">
+            <option value="ruby">Ruby on Rails</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="c">C#</option>
+        </select>
+    </p>
+    <textarea name="comments" id="" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="View User">
+    </form>
+</body>
+</html>

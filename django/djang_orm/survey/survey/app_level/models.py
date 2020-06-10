@@ -10,4 +10,7 @@ class Users(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
-# Create your models here.
+def __repr__(self):
+    return "First_name{}".format(self.first_name)
+
+# Create your models here. ^^^^

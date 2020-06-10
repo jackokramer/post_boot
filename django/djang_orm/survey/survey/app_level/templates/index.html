@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Form</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Fill Out the form to register</h1>
+          <p class="lead">This is a modified jumbotron that occupiesthe entire horizontal space of its parent.</p>
+    <form action="/process" method="POST">
+        {% csrf_token %}
+        <p>First Name: <input type="text" name="first_name"></p>
+        <p>Last Name: <input type="text" name="last_name"></p>
+        <p>Email: <input type="text" name="email"></p>
+        <p>Location: <select name="location" id="">
+            <option value="san_jose">San Jose</option>
+            <option value="tulsa">Tulsa</option>
+            <option value="los_angeles">Los Angeles</option>
+            <option value="seattle">Seattle</option>
+            <option value="Brooklyn">Brooklyn</option>
+        </select></p>
+        <p>Language: <select name="language" id="">
+            <option value="ruby">Ruby On Rails</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="Mean">Mean</option>
+            <option value="ruby">Ruby On Rails</option>
+            </select>
+        </p>
+            <p>Comments 
+            <br><textarea name="comment" id="" cols="30" rows="10">
+            </textarea>
+            </p>
+            <input type="submit" value="Add User">
+        </form>
+    </div>
+    </div>
+</body>
+</html>

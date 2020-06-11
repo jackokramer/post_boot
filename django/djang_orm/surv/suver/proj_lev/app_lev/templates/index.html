@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Form Fill Out</h1>
+                <form action="/process" method="post">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="first_name"></p>
+                <p>Last Name: <input type="text" name="last_name"></p>
+                <p>Email: <input type="text" name="Email"></p>
+                <p>Location: <select name="location" id="">
+                        <option value="san_jose">San Jose</option>
+                        <option value="san_diego">San Diego</option>
+                        <option value="seattle">Seattle</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="fremont">Fremont</option>
+                        <option value="portland">Portland</option>
+                        <option value="new_york">New York</option>
+                        <option value="miami">Miami</option>
+                        <option value="houston">Houston</option>
+                    </select></p>
+                <p>Language: <select name="language" id="">
+                        <option value="ruby">Ruby On Rails</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="mern">Mern</option>
+                        <option value="ios">iOS</option>
+                        <option value="mean">Mean</option>
+                    </select></p>
+                    <p>Comments: <br><textarea name="comments" id="" cols="30" rows="10">
+                </textarea></p>
+                <p><input type="submit"></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

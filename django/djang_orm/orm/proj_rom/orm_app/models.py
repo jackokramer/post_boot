@@ -16,5 +16,9 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
-#new_user = User()
-#new_user.save()
+class Message_Post(models.Model):
+    message = models.TextField()
+    poster = models.ForeignKey(User, related_name='Message_Post', on_delete=models.User) ## weird error
+    likes = models.ManyToMany(User, related_name = "likes") ## DONT NEED ONDELETE FOR MANYtoMany
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)

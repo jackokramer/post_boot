@@ -1,0 +1,14 @@
+*{
+    
+}
+
+.full{
+    margin: 0;
+    padding: 10px;;
+}
+
+@media(min-width:700px){
+    .main-content{
+        width: 62%
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Submit User Info</h1>
+          <form action="/process" method="POST">
+                {% csrf_token %}
+              <p>First Name: <input type="text" name="first_name"></p>
+              <p>Last Name: <input type="text" name="last_name"></p>
+              <p>Email: <input type="text" name="email"></p>
+              <p>Location: <select name="location"></p>
+                  <option value="san_jose">San Jose</option>
+                  <option value="tulsa">Tulsa</option>
+                  <option value="san_antonio">San Antonio</option>
+                  <option value="miami">Miami</option>
+                  <option value="st_paul">Saint Paul</option>
+                  <option value="seattle">Seattle</option>
+                  <option value="san_digo">San Diego</option>
+                  <option value="portland">Portland</option>
+              </select>
+              <p>Language: <select name="language"></p>
+                <option value="ruby">Ruby on Rails</option>
+                <option value="python">Python</option>
+                <option value="c##">C#</option>
+                <option value="mean">Mean</option>
+                <option value="java">Java</option>
+                <option value="os">iOS</option>
+                <option value="javascript">Javascript</option>
+                <option value="mern">Mern</option>
+            </select>
+            <br>
+            <p class="lead">Comments: <br><textarea name="comments" id="" cols="30" rows="5"></textarea></p>
+            <input type="submit" value="Add User">
+          </form>
+          <p class="lead"></p>
+        </div>
+      </div>
+</body>
+</html>

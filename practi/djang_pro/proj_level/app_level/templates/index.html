@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Survey Pract</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-3">Fluid jumbotron</h1>
+
+              <form action="" method="post">
+                {% csrf_token %}
+                <p class="lead">First Name: <input type="text" name="first_name"></p>
+                <p class="lead">Last Name: <input type="text" name="last_name"></p>
+                <p class="lead">Email: <input type="text" name="email"></p>
+                <p>Location: <select name="location" id="">
+                    <option value="san_jose">San Jose</option>
+                    <option value="burbank">Burbank</option>
+                    <option value="tulsa">Tulsa</option>
+                    <option value="seattle">Seattle</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="new_york">New new_york</option>
+                </select>
+                </p>
+                <p>Langauge: <select name="languages" id="">
+                    <option value="ruby">Ruby</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="mern">Mern</option>
+                    <option value="mean">Mean</option>
+                    <option value="java">Java</option>
+                </select></p>
+                <input type="submit" value="Submit Info">
+              </form>
+            </div>
+          </div>
+    </div>
+
+</body>
+</html>

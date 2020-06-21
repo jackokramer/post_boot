@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Form</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+            <h1 class="display-3">Submit User info</h1>
+            <form action="/process" method="POST">
+                {% csrf_token %}
+                <p class="text-center lead">First Name: <input type="text" name="first_name"></p>
+                <p class="text-center lead">Last Name: <input type="text" name="last_name"></p>
+                <p class="text-center lead">Email <input type="text" name="email"></p>
+                <p class="text-center">
+                    Location: <select name="location" id="">
+                        <option value="san_jose">San Jose</option>
+                        <option value="san_diego">San Diego</option>
+                        <option value="dallas">Dallas</option>
+                        <option value="burbank">Burbank</option>
+                        <option value="tacoma">Tacoma</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="new_york">New York</option>
+                        <option value="Miami">Miami</option>
+                    </select>
+                </p>
+                <p class="text-center"> Language: <select name="language">
+                    <option value="ruby">Ruby</option>
+                    <option value="python">Python</option>
+                    <option value="c">C#</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="ios">iOS</option>
+                </select></p>
+                <p class="text-center">Comments: 
+                    <br><textarea name="comments" id="" cols="30" rows="4"></textarea>
+                    <br></p>
+                <p class="text-center"><input type="submit" value="User Info"></p>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

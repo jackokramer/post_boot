@@ -6,9 +6,9 @@ class PostForm(forms.ModelForm):
         model = Post
         fields =('name', 'email', 'location', 'language', 'comments')
         widgets = {
-            'name': form.TextInput(attrs={'class': 'form-control'}),
-            'email': form.TextInput(attrs={'class': 'form-control'}),
-            'location': form.Select(attrs={'class': 'form-control'}),
-            'language': form.Select(attrs={'class': 'form-control'}),
-            'comments': form.TextArea(attrs={'class': 'form-control'})
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'location': forms.Select(attrs={'class': 'form-control'}),
+            'language': forms.Select(attrs={'class': 'form-control'}),
+            'comments': forms.TextArea(attrs={'class': 'form-control'})
         }

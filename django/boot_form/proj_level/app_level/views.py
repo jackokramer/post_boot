@@ -16,5 +16,6 @@ def poster(request):
 
 def AddPostView(CreateView):
     model = Post
+    form_class = PostForm ## postform does all the suff you need
     template_name= 'add_post.html'
-    fields = '__all__'
+    #fields = '__all__'

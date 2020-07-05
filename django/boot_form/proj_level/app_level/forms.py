@@ -5,7 +5,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields =('name', 'email', 'location', 'language', 'comments')
-        widget = {
+        widgets = {
             'name': form.TextInput(attrs={'class': 'form-control'}),
             'email': form.TextInput(attrs={'class': 'form-control'}),
             'location': form.Select(attrs={'class': 'form-control'}),

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Form Fill</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="stuff text-center">
+            <H2 class="text Center">Results</H2>
+                <p>New User Info:</p>
+                <p>name: {{name}}</p>
+                <p>location: {{location}}</p>
+                <p>language: {{language}}</p>
+                <p>comments: {{comments}}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.article{
+    display: flex;
+    background: white;
+    width: 70vw;
+    max-width: 60ch;
+    padding: 3em;
+    box-shadow:  0 0 3em rgba(0, 0, 0, .15);
+}
+
+.main-content{
+    display: inline-block;
+}
+
+.title{
+    margin: 0 0 .5em;
+    font-weight: 900;
+    color: navy;
+    line-height: .8;
+    text-align: center;
+}
+
+.sidebar{
+    margin: 0 0 0 2em;
+}
+
+.widget_author{
+
+}
+
+.authorname{
+    text-align: center;
+    text-decoration: solid;
+}
+
+.auth_img{
+    border-radius: 50%;
+}
+
+.auth_info{
+
+}
+
+.main-img{
+    max-width: 100%;
+}
+
+.widget{
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .15);
+    padding: 1.5em;
+    text-align: center;
+}
+
+.main-content p{
+}

@@ -1,4 +1,4 @@
-#!/Users/jackquentinkramer/Desktop/pract_orm/squirtz/bin/python3
+#!/Users/jackquentinkramer/Desktop/post_doj/django/django_orm/pract_orm/squirtz/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

@@ -10,5 +10,11 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
+class Wizard(models.Model):
+    name = models.CharField(max_length = 45)
+    house = models.CharField(max_length = 45)
+    pet = models.CharField(max_length = 45)
+    year = models.IntegerField()
+
 def __repr__(self):
-    return "Title"
+    return "Name"#f"<Movie objects: {self.name} ({self.id})>"

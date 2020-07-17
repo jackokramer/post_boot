@@ -1,0 +1,75 @@
+(virts) jackquentinkramer@jack-quentin-kramers-macbook project_level % python manage.py shell
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 16:52:21) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.16.1 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from app_level.models import *                                          
+
+# Query: Create 3 new users   
+In [2]: Users.objects.create(first_name="Nadia", last_name="Foreman", email_addr
+   ...: ess="nadia@foreman", age= 31)                                           
+Out[2]: <Users: Users object (1)>
+
+In [3]: Users.objects.create(first_name="Molly", last_name="higgins", email_addr
+   ...: ess="molly@higgins.com", age=28)                                        
+Out[3]: <Users: Users object (2)>
+
+In [4]: Users.objects.create(first_name="Callie", last_name="Ashanti", email_add
+   ...: ress="callie@mawlie.com" age=30)                                        
+  File "<ipython-input-4-cc9ca51ded75>", line 1
+    Users.objects.create(first_name="Callie", last_name="Ashanti", email_address="callie@mawlie.com" age=30)
+                                                                                                       ^
+SyntaxError: invalid syntax
+
+
+In [5]: Users.objects.create(first_name="Callie", last_name="Ashanti", email_add
+   ...: ress="callie@mawlie.com", age=30)                                       
+Out[5]: <Users: Users object (3)>
+
+# Query: Retrieve the first user  
+In [6]: Users.objects.first()                                                   
+Out[6]: <Users: Users object (1)>
+
+# Query: Retrieve all the users  
+In [7]: users.objects.all()                                                     
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-7-f0caad6f5d2a> in <module>
+----> 1 users.objects.all()
+
+NameError: name 'users' is not defined
+
+In [8]: Users.objects.all()                                                     
+Out[8]: <QuerySet [<Users: Users object (1)>, <Users: Users object (2)>, <Users: Users object (3)>]>
+
+# Query: Retrieve the last user   
+In [9]: Users.objects.last()                                                    
+Out[9]: <Users: Users object (3)>
+
+In [10]: last_name = Users.object.get(id=3)                                     
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-10-70152d8886ff> in <module>
+----> 1 last_name = Users.object.get(id=3)
+
+AttributeError: type object 'Users' has no attribute 'object'
+
+# Query: Change the user with id=3 so their last name is Pancakes.    
+In [11]: last_name = Users.objects.get(id=3)                                    
+
+In [12]: last_name.last_name = 'Pancakes'                                       
+
+
+In [13]: user_to_delete = Users.objects.get(id=2)                               
+
+# Query: Delete the user with id=2 from the database  
+In [14]: user_to_delete.delete()                                                
+Out[14]: (1, {'app_level.Users': 1})
+
+In [15]:     
+
+# Query: Get all the users, sorted by their first name    
+Users.objects.order_by('first_name')
+
+# BONUS Query: Get all the users, sorted by their first name in descending order  
+Users.objects.order_by('-first_name')

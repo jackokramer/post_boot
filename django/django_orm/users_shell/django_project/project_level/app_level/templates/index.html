@@ -12,6 +12,12 @@
 <body>
     <div class="container">
         <P>here we are. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium qui officiis quo veniam placeat tenetur est, unde totam fuga odit rem optio adipisci iste repellendus repellat doloremque aspernatur non quam.</P>
+        <h2 class="text_center">All Users</h2>
+            <ul> {{all_of_the_users}}
+            {% for user in all_of_the_users%}
+                <li class="text_center">{{user.title}}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

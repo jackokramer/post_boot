@@ -9,9 +9,39 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <form action="/process" method="post">
-        {% csrf_token %}
+    <div class="jumbotron">
+        <h2 class="text-center"> All the Users</h2>
 
-    </form>
+            <h1>Fill out the Form</h1>
+            <form action="/finished" method="post" class="text-center">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="first_name"></p>
+                <p>Last Name: <input type="text" name="lqst_name"></p>
+                <p>Email: <input type="text" name="email"></p>
+                <p>Age: <input type="text" name="age"></p>
+                <p><input type="submit" value="Add"></p>
+            </form>
+        <table class="mx-auto">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.age}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

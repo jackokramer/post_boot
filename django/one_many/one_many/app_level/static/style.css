@@ -1,0 +1,15 @@
+body{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+section{
+    width: 50%;
+    margin: 0 20px;
+}

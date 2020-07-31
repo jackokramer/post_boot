@@ -13,7 +13,7 @@ def create(request):
         first_name = request.POST['first_name'],
         last_name = request.POST['last_name'],
         email = request.POST['email'],
-        ##language = request.POST['language'],
+        language = request.POST['language'],
         age = request.POST['age']
     )
     return redirect("/")

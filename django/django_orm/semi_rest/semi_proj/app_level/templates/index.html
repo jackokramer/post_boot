@@ -9,6 +9,15 @@
     <title>Home Page</title>
 </head>
 <body>
-    
+    <div class="jumbotron">
+        <h2>Enter in a movie</h2>
+        <form action="/process" method="post">
+            {% csrf_token %}
+        <p class="text-center">Title: <input type="text" name="title"></p>
+        <p class="text-center">Network: <input type="text" name="network"></p>
+        <p class="text-center">Release Date: <input type="datetime"></p>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        </form>
+    </div>
 </body>
 </html>

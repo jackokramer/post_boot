@@ -10,14 +10,18 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h2>Enter in a movie</h2>
-        <form action="/process" method="post">
-            {% csrf_token %}
-        <p class="text-center">Title: <input type="text" name="title"></p>
-        <p class="text-center">Network: <input type="text" name="network"></p>
-        <p class="text-center">Release Date: <input type="datetime"></p>
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
-        </form>
+        <h2 class="text-center">Enter in a movie</h2>
+        <div class="form-group">
+            <form action="/create" method="post">
+                {% csrf_token %}
+            <p class="text-center">Title: <input type="text" name="title"></p>
+            <p class="text-center">Network: <input type="text" name="network"></p>
+            <p class="text-center">Release Date: <input type="date"></p>
+            <p class="text-center">description:<textarea name="description" id="" cols="30" rows="10"></textarea>
+            </p>
+           <button class=" btn btn-primary mx-auto">Submit</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

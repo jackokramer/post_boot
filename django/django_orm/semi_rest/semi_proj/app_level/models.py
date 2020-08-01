@@ -7,7 +7,7 @@ class Director(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at= models.DateTimeField(auto_now=True)
 
-class TvShows(model.Model):
+class TvShows(models.Model):
     title = models.CharField(max_length=100)
     network = models.CharField(max_length=100)
     description = models.TextField()

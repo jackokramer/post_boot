@@ -4,5 +4,15 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'index.html')
 
-def process(request):
-    return render(redirect, "/new_page")
+def new(request):
+    return render(request, 'new.html')
+
+def create(request):
+    print(request.POST)
+    return redirect('/')
+
+def edit(request, show_id):
+    return render(request, 'edit.html')
+
+def show(request, show_id):
+    return render(request, 'edit.html')

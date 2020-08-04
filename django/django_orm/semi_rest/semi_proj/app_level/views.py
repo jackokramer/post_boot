@@ -25,7 +25,15 @@ def edit(request, show_id):
     return render(request, 'edit.html')
 
 def show(request, show_id):
-    return render(request, 'edit.html')
+    ## query for one show with show_id
+    one_show = TvShows.objects.get(id=show_id)
+    context = {
+        'show': one_show
+    }
+
+    return render(request, 'edit.html', context)
 def delete(request, show_id):
     #NOte delete one show
+    ondelete = TvShows.objects.get(id=TvShows_id)
+    ondelete.delete()
     return redirect('/shows')

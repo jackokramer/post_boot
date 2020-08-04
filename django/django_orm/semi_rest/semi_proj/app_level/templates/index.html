@@ -27,13 +27,14 @@
                                 <td>{{show.id}}</td>
                                 <td>{{show.title}}</td>
                                 <td>{{show.network}}</td>
-                                <td>{{show.release_date}}</td>
-                                <td> <a href="/shows/{{show.id}}">Show</a> <a href="/shows/{{show.id}}/edit">Edit</a><a href="/shows/{{show.id}}/delete"></a></td>
+                                <td>{{show.release_date|date:"SHORT_DATE_FORMAT"}}</td>
+                                <td> <a href="/shows/{{show.id}}">Show</a> <a href="/shows/{{show.id}}/edit">Edit</a> <a href="/shows/{{show.id}}/delete">delete</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </thead>
             </table>
+            <p class="text-center p-4 m-5"><a href="/shows/new">Add a New Show</a></p>
         </div>
     </div>
 </body>

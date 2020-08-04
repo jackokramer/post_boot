@@ -9,12 +9,19 @@
     <title>TV Show Info</title>
 </head>
 <body>
-    <div class="container"></div>
-    div.
-    <h2 class="text-center">TV Show Info</h2>
-    <p class="text-center">Title:</p>
-    <p class="text-center">Network:</p>
-    <p class="text-center">Release Date:</p>
-    <p class="text-center">Description</p>
+    <div class="container">    
+        <h2 class="text-center">TV Show Info {{show.id}}</h2>
+    <p class="text-center">Title: {{TvShows.title}}</p>
+    <p class="text-center">Network: {{show.Network}}</p>
+    <p class="text-center">Release Date:{{show.release_date}}</p>
+    <p class="text-center">Description: {{show.description}}</p>
+    <br>
+    <br>
+    <p class="text-center">Last Updated: {{show.updated_at}}</p>
+    <br>
+    <a href="/shows/{{show.id}}/edit">Edit</a> <a href="/shows/{{show.id}}/delete">delete</a></td>
+    </div>
+    <p class="text-center"><a href="/">Home</a></p>
+
 </body>
 </html>

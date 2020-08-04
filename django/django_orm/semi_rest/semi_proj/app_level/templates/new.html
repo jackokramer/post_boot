@@ -11,10 +11,19 @@
 <body>
     <div class="jumbtron">
         <div class="mx-auto">
-            <h2>New Show</h2>
+            <h2 class="text-center">New Show</h2>
             <div class="form-group">
-                
+                <form action="/create" method="post">
+                    {% csrf_token %}
+                <p class="text-center">Title: <input type="text" name="title"></p>
+                <p class="text-center">Network: <input type="text" name="network"></p>
+                <p class="text-center">Release Date: <input type="date" class="release_date"></p>
+                <p class="text-center">description:<textarea name="description" id="" cols="30" rows="10"></textarea>
+                </p>
+               <button class=" btn btn-primary mx-auto">Submit</button>
+                </form>
             </div>
+            <p class="text-center"><a href="/" class="text-center">Home Page</a></p>
         </div>
     </div>
 </body>

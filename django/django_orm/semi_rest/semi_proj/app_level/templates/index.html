@@ -10,17 +10,30 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h2 class="text-center">Enter in a movie</h2>
+        <h2 class="text-center p-5 m-5">List of Movies</h2>
         <div class="form-group">
-            <form action="/create" method="post">
-                {% csrf_token %}
-            <p class="text-center">Title: <input type="text" name="title"></p>
-            <p class="text-center">Network: <input type="text" name="network"></p>
-            <p class="text-center">Release Date: <input type="date"></p>
-            <p class="text-center">description:<textarea name="description" id="" cols="30" rows="10"></textarea>
-            </p>
-           <button class=" btn btn-primary mx-auto">Submit</button>
-            </form>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Network</th>
+                        <th>Release Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody>
+                        {%for show in TvShows%}
+                            <tr>
+                                <td>{{show.id}}</td>
+                                <td>{{show.title}}</td>
+                                <td>{{show.network}}</td>
+                                <td>{{show.release_date}}</td>
+                                <td> <a href="/shows/{{show.id}}">Show</a> <a href="/shows/{{show.id}}/edit">Edit</a><a href="/shows/{{show.id}}/delete"></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
         </div>
     </div>
 </body>

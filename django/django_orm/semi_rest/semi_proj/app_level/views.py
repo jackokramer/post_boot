@@ -22,6 +22,24 @@ def create(request):
     return redirect('/')
 
 def edit(request, show_id):
+    one_show = TvShows.object.get(id=TvShows)
+    context = {
+        'show': one_show
+    }
+    return render(request, 'edit.html', context)
+
+def update(request, show_id):
+    ## update show and query for a show
+    to_update = TvShows.object.get(id=TvShows.id)
+    ## updates each field
+    to_update.title = request.POST['title'],
+    to_update.network = request.POST['network'],
+    to_update.release_date = request.POST['release_date'],
+    to_update.description = request.POST['description'],
+    to_update.save()
+    return redirect('/shows/')
+
+def edit(request, show_id):
     return render(request, 'edit.html')
 
 def show(request, show_id):
@@ -31,7 +49,7 @@ def show(request, show_id):
         'show': one_show
     }
 
-    return render(request, 'edit.html', context)
+    return render(request, 'show.html', context)
 def delete(request, show_id):
     #NOte delete one show
     ondelete = TvShows.objects.get(id=TvShows_id)

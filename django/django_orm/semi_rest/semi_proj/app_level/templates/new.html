@@ -13,7 +13,7 @@
         <div class="mx-auto">
             <h2 class="text-center">New Show</h2>
             <div class="form-group">
-                <form action="/create" method="post">
+                <form action="/shows/create" method="post">
                     {% csrf_token %}
                 <p class="text-center">Title: <input type="text" name="title"></p>
                 <p class="text-center">Network: <input type="text" name="network"></p>

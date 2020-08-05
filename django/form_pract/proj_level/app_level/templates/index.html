@@ -6,9 +6,6 @@
     {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <title>Document</title>
-    <form action="/push" method="post">
-        {% csrf_token %}
-    </form>
 </head>
 <body>
     <div class="jumbotron">
@@ -16,18 +13,27 @@
     <div class="container">
         <form action="/process" method="POST">
             {% csrf_token %}
-            <p class="text-center">First Name:<input type="text" name="first_name"></p>
-            <p class="text-center">Last Name:<input type="text" name="last_name"></p>
-            <p class="text-center"> Email:<input type="text" name="email"></p>
-            <p class="text-center">Language: <select name="language" id="">
-                <option value="ruby">Ruby</option>
-                <option value="python">Python</option>
-                <option value="java">Java</option>
-                <option value="C#">C#</option>
-                <option value="ios">iOS</option>
-            </select></p>
-            <p class="text-center">Description: <textarea name="description" id="" cols="30" rows="10"></textarea></p>
-            <p class="text-center"><input type="submit" value="Submit"></p>
+            <div class="form-group">
+                <p class="text-center">First Name:<input type="text" name="first_name"></p>
+            </div>
+            <div class="form-group">
+                <p class="text-center">Last Name:<input type="text" name="last_name"></p>
+            </div>
+            <div class="form-group">
+                <p class="text-center"> Email:<input type="text" name="email"></p> 
+            </div>
+            <div class="form-group">
+                <p class="text-center">Language: 
+                <select name="language" id="language">
+                    {% for langs in languages %}
+                    <option value="{{langs}}">{{langs}}</option>
+                    {% endfor %}
+                </select></p>
+            </div>
+            <div class="form-group">
+                <p class="text-center">Description: <textarea name="description" id="" cols="30" rows="10"></textarea></p>
+                <p class="text-center"><input type="submit" value="Submit" class="btn btn-primary"></p>
+            </div>
         </form>
     </div>
     </div>

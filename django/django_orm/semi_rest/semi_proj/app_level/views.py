@@ -8,6 +8,13 @@ def index(request):
     return render(request, 'index.html', context)
 
 def new(request):
+    if request.method == 'POST':
+        context = {
+            'title': request.POST['title'],
+            'Network': request.POST['network'],
+            'release-date': request.POST['release_date'],
+            'description': request.POST['description']
+        }
     return render(request, 'new.html')
 
 def create(request):

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>Form Builder</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h2 class="text-center">New nInja</h2>
+        <p class="text-center">Name: {{first_name}}{{last_name}}</p>
+        <p class="text-center">Email: {{email}}</p>
+        <p class="text-center">Language: {{language}}</p>
+        <p class="text-center">Description: {{description}}</p>
+
+         <p class="text-center">  <a href="/">Home Page</a></p>
+    </div>
+</body>
+</html>

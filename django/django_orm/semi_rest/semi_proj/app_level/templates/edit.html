@@ -14,7 +14,7 @@
             {% csrf_token %}
         <p class="text-center">Title: <input type="text" name="title" value="{{TvShows.title}}"></p>
         <p class="text-center">Network: <input type="text" name="network" value="{{TvShows.network}}"></p>
-        <p class="text-center">Release Date: <input type="date" class="release_date" value=""></p> <!--{{TvShows.release_date|date: 'Y-m-d'}}-->
+        <p class="text-center">Release Date: <input type="date" class="release_date" value=""></p> 
         <p class="text-center">description:<textarea name="description" value="{{TvShows.description}}" id="" cols="30" rows="10"></textarea>
         </p>
        <p class="text-center"><button class=" btn btn-primary mx-auto">Update</button> </p>

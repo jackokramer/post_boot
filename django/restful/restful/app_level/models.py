@@ -2,10 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Director(models.Model):
-    first_name= models.CharField(max_length=45)
-    last_name= models.CharField(max_length=45)
+    name= models.CharField(max_length=45)
     email = models.CharField(max_length=45)
-    age =  models.IntegerField()
     about = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -13,5 +11,6 @@ class Director(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=45)
     description = models.TextField()
+    director = models.ForeignKey(Director, related_name="movies", on_delete=models.CASCADE)
     release_date = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)

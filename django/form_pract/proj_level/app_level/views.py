@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import User
 
 langs =(
     'Python',
@@ -32,5 +33,11 @@ def results(request):
     print('results are in and trumps out....')
     context = {
         'result': request.session['result'] 
+    }
+    return render(request, 'results.html', context)
+
+def allUsers(request):
+    context = {
+        'all_users': User.objects.all()
     }
     return render(request, 'results.html', context)

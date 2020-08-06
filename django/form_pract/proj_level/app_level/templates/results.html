@@ -11,7 +11,32 @@
 <body>
     <div class="jumbotron">
         <h2 class="text-center">New nInja</h2>
-        <p class="text-center">Name: {{result.first_name}}{{result.last_name}}</p>
+
+        <h2>All Users</h2>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Language</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in all_users %}
+                    <tr>
+                        <td>{{user.first_name}}</td>
+                        <td>{{user.last_name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.language}}</td>
+                        <td>{{user.description}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p class="text-center p-5 m-5">Name: {{result.first_name}} {{result.last_name}}</p>
         <p class="text-center">Email: {{result.email}}</p>
         <p class="text-center">Language: {{result.language}}</p>
         <p class="text-center">Description: {{result.description}}</p>

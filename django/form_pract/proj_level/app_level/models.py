@@ -9,3 +9,6 @@ class User(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __repr__(self):
+        return "Name {}".format(self.first_name.last_name)

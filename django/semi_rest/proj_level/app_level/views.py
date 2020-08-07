@@ -22,17 +22,34 @@ def create(request):
     return redirect("/shows")
 
 def edit(request, show_id):
-    return render(request, 'edit.html')
+    one_show = Show.objects.get(id=show_id)
+    #query for one show
+    context = {
+        'show': one_show
+    }
+    return render(request, 'edit.html', context)
+
+def update(request, show_id):
+    ## update show
+    to_update = Show.objects.get(id=show_id)
+    # updates each field
+    to_update.title =  request.POST['title']
+    to_update.network = request.POST['network']
+    to_update.release_date = request.POST['release_date']
+    to_update.description = request.POST['description']
+    to_update.save()
+    return redirect('/shows/')
 
 def show(request, show_id):
     #query for one show with show_id
     one_show = Show.objects.get(id=show_id)
     context = {
-        'show': one_show
+        'Show': one_show
     }
     return render(request, 'shows.html', context)
 
 def delete(request, show_id):
     ## delete one show
+    to_delete = Show.objects.get(id=show_id).delete()
     return redirect('/shows')
 

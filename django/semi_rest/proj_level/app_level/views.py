@@ -51,5 +51,5 @@ def show(request, show_id):
 def delete(request, show_id):
     ## delete one show
     to_delete = Show.objects.get(id=show_id).delete()
-    return redirect('/shows')
+    return redirect('/')
 

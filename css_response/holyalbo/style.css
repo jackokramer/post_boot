@@ -1,5 +1,5 @@
 .container{
-    background-color: slategray;
+    background-color: rgb(207, 221, 235);
 }
 
 
@@ -11,18 +11,23 @@
 h1{
     color: orangered;
     font-weight: 800;
+    text-align: center;
+    font-size: 50px;
+}
+
+.second{
+    text-align: center;
+    font-size: medium;
+    font-size: 15px;
+    font-style: italic;
 }
 
 .card{
     padding: 1em;
+    margin: 20px;
     border: 1px solid rgba(0,0,0,.25)
 }
 
-.another-section{
-    background-color: white;
-    padding: 1em;
-    max-width: 15rem;
-}
 
 .width-container{
     position: absolute;
@@ -37,11 +42,19 @@ h1{
 }
 
 .columns{
-    display: flexbox;
+    display: flex;
     flex-wrap: wrap;
     gap: 2ems;
 }
 
 .columns > *{
+    flex-basis: calc(500px -100% *999);
     flex-basis: 100%;
+}
+
+.another-section{
+    background-color: white;
+    padding: 1em;
+    max-width: 15rem;
+    flex-grow: 0.2;
 }

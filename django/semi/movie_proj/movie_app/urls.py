@@ -12,6 +12,6 @@ urlpatterns = [
     #localhost: 8000/shows/<shows_id>edit
     path('<int:movie_id>/edit', views.show),
     #localhost:8000/shows/<show_id>/delete
-    path('<int:show_id>/delete', views.delete)
+    path('<int:movie_id>/delete', views.delete)
 
 ]

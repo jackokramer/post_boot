@@ -10,29 +10,32 @@
 </head>
 <body>
     <h2 class="text-center">All Movies</h2>
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Network</th>
-                    <th>Release Date</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {%for movie in movies %}
+        <div class="jumbotron">
+            <table class="table table-dark">
+                <thead>
                     <tr>
-                        <td>{{movie.id}}</td>
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.network}}</td>
-                        <td>{{movie.release_date}}</td>
-                        <td>{{movie.description}}</td>
-                        <td><a href="/movie/{{movie.id}}">Show </a><a href="/movie/{{movie.id}}/edit">Edit </a> <a href="/movie/{{movie.id}}/delete">Delete </a></td>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Network</th>
+                        <th>Release Date</th>
+                        <th>Description</th>
+                        <th>Actions</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {%for movie in movies %}
+                        <tr>
+                            <td>{{movie.id}}</td>
+                            <td>{{movie.title}}</td>
+                            <td>{{movie.network}}</td>
+                            <td>{{movie.release_date | date:'SHORT_DATE_FORMAT'}}</td>
+                            <td>{{movie.description}}</td>
+                            <td><a href="/movies/{{ movie.id }}">Show </a> | <a href="/movies/{{ movie.id }}/edit">Edit </a> | <a href="/movies/{{ movie.id }}/delete">Delete </a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p class="text-center"><a href="/movies/new">Add A Show</a></p>
+        </div>
 </body>
 </html>

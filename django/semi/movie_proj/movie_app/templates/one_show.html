@@ -9,6 +9,15 @@
     <title>A Movie</title>
 </head>
 <body>
-    <h2 class="text-center">Movie Information</h2>
+    <h2 class="text-center">Movie Information {{movie.id}}</h2>
+    <div class="jumbotron">
+    <h5 class="p-5">Title: <p class=""> {{movie.title}}</p></h5>
+    <h5 class="p-5 m-5">Network: <p class="">{{movie.network}}</p></h5>
+    <h5 class="p-5 m-5">Release Date: <p class="">{{movie.release_date}}</p></h5>
+    <p class="text-center">Description: <p class="text-center">{{movie.description}}</p></p>
+    <h3 class="p-5 m-5">Last Updated: {{movie.updated_at}}</h3>
+    </div>
+    <p class="text-center"><a href="/movies/{{ movie.id }}/edit">Edit </a> | <a href="/movies/{{ movie.id }}/delete">Delete </a></p>
+
 </body>
 </html>

@@ -1,0 +1,26 @@
+.more-content-here{
+
+}
+
+:root{
+    --clr-primary: #ee6352;
+    --clr-body: #333;
+    --clr-bg: #ddd;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    font-family: basic-sans, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--clr-body);
+    background: var(--clr-bg);
+}

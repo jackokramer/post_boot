@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Log In and Register</title>
+</head>
+<body>  
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    <div class="jumbotron">
+        <h2 class="text-center">Register</h2>
+        <div class="form">
+            <form action="/register" method="post" class="text-center">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="first_name"></p>
+                <p>Last Name: <input type="text" name="last_name"></p>
+                <p>Email: <input type="text" name="email"></p>
+                <p>Password: <input type="text" name="password"></p>
+                <p>Confirm Password: <input type="text" name="confirm"></p>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <br>
+        <h2 class="text-center"> Login</h2>
+        <form action="/log" method="post" class="text-center">
+            {% csrf_token %}
+        <p>Email:<input type="text" name="email"></p>
+        <p>Password: <input type="text" name="password"></p>
+        <input type="submit" value="LogIn">
+        </form>
+    </div>
+</body>
+</html>

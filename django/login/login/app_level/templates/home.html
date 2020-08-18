@@ -9,6 +9,16 @@
     <title>Log In and Register</title>
 </head>
 <body>
-    <h2 class="text-center">You've Logged in Successfully </h2>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li>{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h2 class="text-center">You've Logged in Successfully {{request.session.name}}</h2>
+
+    <br>
+    <p class="text-center p-5 m-5"><a class='text-center p-5 m-5' href="/">Home</a></p>
 </body>
 </html>

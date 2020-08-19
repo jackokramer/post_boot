@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Landing Page</title>
+</head>
+<body>
+    <p class="text-right p-2 m-3"><a href="/" class="btn btn-danger">Logout</a></p>
+    <h2 class="text-center">{{request.session.name}} You've successfully logged in</h2>
+</body>
+</html>

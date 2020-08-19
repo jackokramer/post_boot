@@ -19,6 +19,15 @@ class UserManager(models.Manager):
             errors['confirm_password'] = 'Password and confirm password do not match'
         return errors
 
+class PoetManager(models.Manager):
+    def manage(self, postdata):
+        errors= {}
+        if len(postdata['full_name'])<7:
+            errors['full_name'] = "Name is too show needs to be more than 7 character and a space inbtween"
+        if len(postdata['quote'])<8:
+            errors['quote'] = " Please write a complete sentence"
+        return errors
+
 class User(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -27,3 +36,18 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+
+class Quote(models.Model):
+    full_name = models.CharField(max_length=100)
+    quote= models.TextField()
+    poster = models.ForeignKey(User, related_name="quotes", on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name="quotes_liked")
+    updated_at = models.DateTimeField(auto_now=True)
+    
+class Comment(models.Model):
+    comment= models.CharField(max_length=255)
+    poster = models.ForeignKey(User, related_name="comments", on_delete = models.CASCADE)
+    quote = models.ForeignKey(Quote, related_name='comments', on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

@@ -8,43 +8,19 @@
     <title>Landing Page</title>
 </head>
 <body>
-    <div class="jumbotron">
-        <p class="text-right p-4 m-5"><a href="/" class="btn btn-danger">Logout</a></p>
-    <h2 class="text-center">{{request.session.name}} You've successfully logged in.{{user.first_name}}</h2>
-    <h3 class="text-center p-4">Write a Post</h3>
-    <form action="/posts" method="post" class="text-center">
-        {% csrf_token %}
-        <p>Poet Name:<input type="text" name="full_name"></p>
-        <p>Quote:</p>
-        <textarea name="quote" id="" cols="30" rows="10"></textarea>
-        <br>
-        <br>
-        <input type="submit" value="Post" class="btn btn-primary">
-    </form>
-        {% for quote in all_quotes %}
-        <div class=" quote p-4 m-5">
-        <a href="/like/{{com.id}}" class="btn btn-success p-2">Like</a>
-        <p>{{like.count}}</p>
-            <p>Name: {{quote.full_name}}</p>
-            <p>Quote:{{quote.quote}}</p>
-            <p>Poster: {{quote.poster.first_name}} {{quote.poster.last_name}}</p>
-            {% for comment in quote.comments.all %}
-            <div class="comm text-center">
-                <p class="text-center"> Comment: {{comment.comment}}</p>
-                <p>Posted By User: {{comment.poster.first_name}}</p>
-                <p>Created at: {{comment.created_at}}</p>
-            </div>
-            {% endfor %}
-            <form action="/comment/{{com.id}}" method="post">
-                <!-- <input type="hiden" value="{{quote.id}}" name="mess"> -->
-                {% csrf_token %}
-                 <input type="text" name="comment">
-                 <input type="submit" value="Comment" class="btn btn-secondary">
-             </form>
-            <p class="text-center">Created At: {{quote.created_at}}</p>
-
-        </div>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li>{ message }}</li>    
         {% endfor %}
-    </div>
+    </ul>
+    {% endif %}
+    <h2 class="text-center">{{request.session.name}} You've successfully logged in.{{user.first_name}}</h2>
+    <form action="/process" method="post" class="text-center">
+        {% csrf_token %}
+        <p>Email:<input type="text"></p>
+
+    </form>
+    <p class="text-cetner"><a href="/">Logout</a></p>
 </body>
 </html>

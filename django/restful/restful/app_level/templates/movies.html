@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Directors</title>
+</head>
+<body>
+    <h2 class=text-center>Here are a lits of our directors</h2>
+    <h3 class="text-center p-4">Add a Movie</h3>
+        <form action="/add_movie" method="POST">
+            {% csrf_token %}
+            <p class="text-center">Title: <input type="text" name="title" id=""></p>
+            <p class="text-center">Description: <input type="text" name="description"></p>
+            <p class="text-center">Directors : <select name="director" id="">
+                {% for director in all_directors %}
+                <option value="{{director.id}}">{{director.name}}</option>
+                {% endfor %}
+            </select>
+            </p>
+            <p class="text-center"><input type="Submit" value="Add Movie" class="btn btn-primary"></p>
+        </form>
+        <h3>These are the Movies</h3>
+        <table class="table table-dark p-5 m-5">
+            <thead>
+                <tr>
+                    <th>Title:</th>
+                    <th>Description:</th>
+                    <th>Director:</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in all_movies %}
+                <tr>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.description}}</td>
+                    <td>{{movie.director.name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p class="text-center"><a href="/directors">Directors</a></p>
+        <p class="text-center"><a href="/">Home</a></p>
+</body>
+</html>

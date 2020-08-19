@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="text-center p-5"> Edit A show</h2>
+    <div class="jumbotron">
+        <form action="/shows/{{ show.id }}/update" method="post">
+            {% csrf_token %}
+            <p class="text-center p-2">Title: <input type="text" name="title" value="{{show.title}}"></p>
+            <p class="text-center p-2">Network: <input type="text" name="network" value="{{show.network}}"></p>
+            <p class="text-center p-2">Release Date: <input type="date" name="release_date" id="release_date" value=></p>
+            <p class="text-center p-2">Description: <textarea name="description" id="" cols="30" rows="10">{{show.description}}</textarea></p>
+            <p class="text-center p-2"><input type="submit" value="Add a show" class="btn btn-primary"></p>
+        </form>
+        <br>
+        <p class="text-center"><a href="/">Home</a></p>
+    </div>
+</body>
+</html>

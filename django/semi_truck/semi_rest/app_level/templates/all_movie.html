@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Add Movie</title>
+</head>
+<body>
+    <h3 class="text-center">All Movies</h3>
+    <div class="jumbotron">
+        <table class="table table-dark">
+            <thead>
+                <th>Title</th>
+                <th>Production</th>
+                <th>Description</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                
+                {% for movie in movies%}
+                <tr>
+                    <td> {{movie.id}}</td>
+                    <td>{{movie.Title}}</td>
+                    <td>{{movie.production}}</td>
+                    <td>{{movie.description}}</td>
+                    <td>{{movie.release_date|date:"SHORT_DATE_FORMAT" }}</td>
+                    <td><a href="/movies/{{movie.id}}">Movie</a> | <a href="/movies/{{ movie.id}}/edit">Edit</a> | <a href="/movies/{{movie.id}}/delete">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/movies/new">Add a Show</a>
+    </div>
+</body>
+</html>

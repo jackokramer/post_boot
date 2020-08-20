@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %} <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Edit Movie</title>
+</head>
+<body>
+    <h3 class="text-center">Edit Movie</h3>
+    <div class="jumbotron">
+        <form action="/movies/{{movie.id}}/update" method="post">
+            {% csrf_token %}
+            <p class="text-center">Title: <input type="text" name="title" value={{movie.title}}></p>
+            <p class="text-center">Prouction Company: <input type="text" name="production" value="{{movie.production}}"></p>
+            <p class="text-center">Director: <input type="text" name="director" value="{{movie.director}}"></p>
+            <p class="text-center">Release Date: <input type="date" name="release_date" value="{{movie.release_date|date:'Y-m-d'}}"></p>
+            <p class="text-center">
+            <textarea name="description" id="" cols="30" rows="10" class="">{{movie.description}}</textarea></p>
+                <input type="submit" value="Edit Movie" value="Edit Movie" class=" text-center mx-auto btn btn-primary">
+            </form>
+            <a href="/movies" class="btn btn-secondary text-center mx-auto m-3">Home page</a>
+        </div>
+</body>
+</html>

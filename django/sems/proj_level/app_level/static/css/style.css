@@ -1,0 +1,9 @@
+body{
+    background-color: teal;
+}
+
+h1,h2,h3{
+    color: aliceblue;
+    font-weight: bolder;
+    font-style: italic;
+}

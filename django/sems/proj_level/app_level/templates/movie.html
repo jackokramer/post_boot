@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %} <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Movie Info</title>
+</head>
+<body>
+    <h3 class="text-center"> Movie ID {{movie.id}}</h3>
+    <div class="jumbotron">
+        <h4 class="text-center">Title</h4>
+        <p class="text-center">{{movie.title}}</p>
+        <h4 class="text-center">Production Company</h4>
+        <p class="text-center">{{movie.production}}</p>
+        <h4 class="text-center">Director</h4>
+            <p class="text-center">{{movie.director}}</p>
+        <h4 class="text-center">Release Date</h4>
+            <p class="text-center">{{movie.release_date}}</p>
+        <h4 class="text-center">Description</h4>
+            <p class="p-3">{{movie.description}}</p>
+        
+        <h3 class="p-4">Updated At</h3>
+        <p class="p-3">{{movie.updated_at}}</p>
+
+        <a href="/movies" class="btn btn-secondary text-center mx-auto m-3">Home page</a>
+        <br>
+        <a href="/movies/{{movie_id}}/delete" class="btn btn-danger">Delete</a>
+        <br>
+        <a href="/movies/{{movie.id}}/edit" class="btn btn-info m-3">Edit</a> 
+
+    </div>
+</body>
+</html>

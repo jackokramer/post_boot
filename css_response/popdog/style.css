@@ -13,6 +13,7 @@
 }
 
 body{
+    font-family: sans-serif;
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -20,24 +21,67 @@ body{
     color: var(--clr-light);
 }
 
-.game{
+h1,
+h2,
+h3,
+p{
+    margin:0;
+}
 
+.game{
+    position: relative;
+    max-width: 12.5em; /*Same as 200px*/
+}
+
+img{
+    max-width: 100%;
 }
 
 .front{
 
 }
 
-.back{
-
+.front, .streamers img{
+    border: 1px solid var(--clr-dark);
+    
+    &:nth-of-type(1){
+        transform: translateX(50%);
+        z-index: 1;
+    }
+    &:nth-of-type(2){
+        transform: translateX(25%);
+    }
+    &:nth-of-type(3){
+        transform: translateX(25%);
+    }
 }
 
+.front, .name{
+    text-align: center;
+    margin: .75em 0;
+}
+
+.back{
+    display: none;
+}
+
+
+.rank{
+    font-weight: bold;
+    position: absolute;
+    top:0;
+    background: rgba(0, 0, 0, .5);
+    padding: .5em .5em .75em;
+}
 .game_name{
 
 }
 
 .stats{
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*border: 1px solid red;*/
 }
 
 .viewers{
@@ -45,5 +89,23 @@ body{
 }
 
 .streamers{
-    
+    display: flex;
+}
+
+.streamers, img{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.streaming-info{
+
+}
+
+.game-stat{
+
+}
+
+.background{
+
 }

@@ -10,6 +10,8 @@
     --clr-accent: rgb(222,52,0);
     --clr-accent-dark: rgb(163,38, 0);
     --clr-secondary: rgb(0,62,163);
+
+    --br-border-radius: .5em;
 }
 
 body{
@@ -37,15 +39,17 @@ img{
     max-width: 100%;
 }
 
-.front{
+.front, img{
+    width: 200px;
+    height: 200px;
 
 }
 
-.front, .streamers img{
+.streamers img{
     border: 1px solid var(--clr-dark);
     
     &:nth-of-type(1){
-        transform: translateX(50%);
+        transform: translateX(25%);
         z-index: 1;
     }
     &:nth-of-type(2){
@@ -54,6 +58,10 @@ img{
     &:nth-of-type(3){
         transform: translateX(25%);
     }
+}
+
+.front{
+    transition: 250ms;
 }
 
 .front, .name{
@@ -72,6 +80,7 @@ img{
     top:0;
     background: rgba(0, 0, 0, .5);
     padding: .5em .5em .75em;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0%, 0%);
 }
 .game_name{
 
@@ -82,6 +91,13 @@ img{
     justify-content: space-between;
     align-items: center;
     /*border: 1px solid red;*/
+}
+
+.thumbnail{
+    height: 200px;
+    width: 200px;
+    border-radius: var(--br-border-radius);
+    margin-right: 20px;
 }
 
 .viewers{
@@ -106,6 +122,30 @@ img{
 
 }
 
-.background{
+.game:hover .front{
+    transform: 
+}
 
+.background{
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(.2, .9);
+    transition: ease-in;
+    border-radius: var(--br-border-radius);
+}
+
+.back{
+    display: none;
+}
+
+.game:hover .background{
+    transform: scale(1.4, 1.2);
+    opacity: 1;
+    transition: transform 250ms ease-in-out;
+    opacity: 100ms linear;
+    opacity: 1;
 }

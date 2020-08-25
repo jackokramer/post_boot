@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="text-center">New Book</h2>
+        <div class="jumbotron">
+            <form action="/books/create" method="POST">
+            {% csrf_token %}
+                <p class="text-center">Title: <input type="text" name="title"></p>
+                <p class="text-center">Publisher: <input type="text" name="publisher"></p>
+                <p class="text-center">Author: <input type="text" name="author"></p>
+                <p class="text-center"><textarea name="description" id="" cols="30" rows="10"></textarea></p>
+                <p class="text-center">Release Date: <input type="date" name="release_date"></p>
+                <p class="text-center"> <input type="submit" value="Add Book" class=" btn btn-primary"></p>
+            </form>
+        </div>
+            <h2 class="text-center">Add Author</h2>
+                <div class="jumbotron">
+                <form action="/books/create_author" method="post">
+                    {% csrf_token %}
+                        <p class="text-center">First Name: <input type="text" name="first_name"></p>
+                        <p class="text-center">Last Name: <input type="text" name="last_name"></p>
+                        <p class="text-center">Home Town: <input type="text" name="home_town"></p>
+                        <p class="text-center">Genre: 
+                            <select name="genre" id="">
+                                <option value="horror">Horror</option>
+                                <option value="romance">Romance</option>
+                                <option value="mystery">Mystery</option>
+                                <option value="crime">Crime</option>
+                                <option value="non-fiction">Non-fiction</option>
+                                <option value="fiction">Fiction</option>
+                                <option value="biography">Biography</option>
+                            </select></p>
+                        <p class="text-center"> <input type="submit" value="Add Author" class=" btn btn-primary"></p>
+                    </form>
+                    <p class="text-center"><a href="/" class="btn btn-secondary">Home</a></p>
+        </div>
+</body>
+</html>

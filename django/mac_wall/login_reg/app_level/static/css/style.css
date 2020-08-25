@@ -1,0 +1,11 @@
+body{
+    background-color: teal;
+}
+
+div{
+    display: inline-block;
+}
+
+form{
+    display: inline-block;
+}

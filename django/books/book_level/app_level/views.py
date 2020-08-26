@@ -11,7 +11,6 @@ def index(request):
 def new(request):
     return render(request, 'new.html')
 
-
 def create_author(request):
     Author.objects.create(
         first_name = request.POST['first_name'],
@@ -37,15 +36,15 @@ def delete_author(request, author_id):
     return redirect('/')
 
 
-def edit(request, book_id, author_id):
+def edit(request, book_id):
     return render(request, 'edit.html')
 
-def create(request):
+def create(request, author_id):
     ## create the show
     Book.objects.create(
         title= request.POST['title'],
         publisher= request.POST['publisher'],
-        author = request.POST['author'],
+        author = Author.objects.get(id=author_id),
         description= request.POST['description'],
         release_date = request.POST['release_date']
     )

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Home Page</title>
+</head>
+<body>
+    <h2 class="text-center"> All Groups</h2>
+    <div id="wrapper">
+        <div id="head">
+            <p class="text-right p-2 m-3"><a href="/" class="btn btn-danger">Logout</a></p>
+            <h2 class="text-center">Welcome {{request.session.name}}</h2>
+            <h3>Here are some groups you can join</h3>
+        </div>
+        <div id="main-content">
+            <div class="orgs">
+                <h4>Placeholder to list my organizations</h4>
+                {% for org in all_orgs %}
+                <h5> <a href="/groups/{{org.id}}">{{org.name}}</a></h5>
+                <p>Members: {{org.members.count}}</p>
+                <p class="text-center">{{org.description}}</p>
+                {% endfor %}
+            </div>
+            <div class="orgs">
+                <h5>Add a Group:</h5>
+                <form action="/create_org" method="post">
+                    {% csrf_token %}
+                    <p class="text-center">Name: <input type="text" name="org_name"></p>
+                    <p class="text-center"> Description: <textarea name="description" id="" cols="30" rows="10"></textarea></p>
+                    <p class="text-center"><input type="submit" value="Add Group" class="btn btn-success"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Individual Group</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="head">
+            <p><a href="/groups">Dashboard</a></p> 
+            <p class="text-right p-2 m-3"><a href="/logout" class="btn btn-danger">Logout</a></p>
+            <h1 class="text-center">{{one_group.name}}</h1>
+            {% if user in one_group.members.all %}
+            <a href="/leave/{{one_group.id}}" class="text_right btn btn-danger">Leave Group</a>
+            {% else %}
+            <a href="/join/{{one_group.id}}" class="text_right btn btn-primary">Join Group</a>
+            {% endif %}
+            <p class="text-center">{{one_group.description}}</p>
+            <h5 class="p-3 m-4">Created By: {{one_group.creator.first_name}} {{one_group.creator.last_name}}</h5>
+            <br>
+            <h3>Members</h3>
+            <ul>
+                {% for member in one_group.members.all%}
+                <li>{{member.first_name}} {{member.last_name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

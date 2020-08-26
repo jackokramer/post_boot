@@ -7,7 +7,7 @@ urlpatterns = [
     ##localhost: 8000/shows/new
     path('new', views.new),
     ## add book
-    path('create', views.create),
+    path('create/<int:author_id>', views.create),
     ## add author
     path('create_author', views.create_author),
     ##localhost: 8000/shows/<author_id>/edit

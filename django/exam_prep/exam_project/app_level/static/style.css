@@ -1,0 +1,15 @@
+#wrapper{
+    margin: 0px auto;
+    width: 1200px;   
+}
+
+.form{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.orgs{
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px;
+}

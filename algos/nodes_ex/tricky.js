@@ -20,4 +20,48 @@ class binarySearch{
     constructor(){
         this.root = null;
     }
-}
+    // move is disguised as add
+    move(val, root = this.root){
+        if (this.root == null){
+            this.root = new Node(val);
+            return;
+        }
+        if(value<root.val){
+            if(root.left == null){
+                root.left = new Node(val)
+            }
+        }
+    }
+    //function defined here setting it up as evens and odds
+    search(value){
+        let runner = this.root;
+        while(runner){
+            if(runner.value == value){
+                return true
+            }
+            // now move left and right
+            if(value>runner.value){
+                runnner = runner.right;
+            } else {
+                runner = runner.left;
+            }
+            }
+        }
+    lastColor(value, runner, end =18){
+        if(runner%2===1){
+            runner.next = left;
+        }
+        else {
+            if (runner%2 === 0){
+                runner.next = right;
+            }
+            ///return end
+        }
+    }
+    }
+
+color_board = new binarySearch(21);
+
+// goal would be to have it traverse through a tree or a board in this case and get to 21 from another number.
+
+console.log(color_board.search(192))

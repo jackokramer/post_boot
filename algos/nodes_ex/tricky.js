@@ -9,20 +9,45 @@ Followup: Now, with the same setting as before, we want to find all nodes from w
 */
 
 class Node{
-    constructor(value, left, right){
+    constructor(value, winning_Node, transitions){
         this.value = value;
-        this.left= null;
-        this.right = null
+        this.winning_Node= true; // switched it to a boolean
+        this.transitions = Node;
     }
 }
+
+const winningPaths = new Node(value);
+
+let board = Node;
 
 class binarySearch{
     constructor(){
         this.root = null;
     }
-    // move is disguised as add
-    move(val, root = this.root){
-        if (this.root == null){
+    findPath(Node, winning_Node){
+        let currentPath= Node;
+        for (transition in Node.transitions){
+            if (transition.winning_Node){
+                winningPaths.appendChild(currentPath) = winning_Node
+            } else{
+                currentPath.append(transitions) != winningPaths
+            }
+        } 
+    }
+ }
+ for(node in board){
+    findPath(node);       
+}
+
+console.log(winningPaths);
+
+// goal would be to have it traverse through a tree or a board in this case and get to 21 from another number.
+
+//console.log(color_board.search(192))
+
+
+//OLD CODE
+        /*if (this.root == null){
             this.root = new Node(val);
             return;
         }
@@ -56,12 +81,4 @@ class binarySearch{
                 runner.next = right;
             }
             ///return end
-        }
-    }
-    }
-
-color_board = new binarySearch(21);
-
-// goal would be to have it traverse through a tree or a board in this case and get to 21 from another number.
-
-console.log(color_board.search(192))
+        } */

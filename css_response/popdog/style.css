@@ -22,3 +22,61 @@ body{
     background: var(--clr-dark);
     color: var(--clr-light);
 }
+
+h1, h2, h3, p{
+    margin: 0;
+}
+
+.rank{
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: .5em;
+    background: rgba(0,0,0,.65);
+    padding: .5em .5em .75em;
+    clip-path: polygon(100% 0%, 100% 100%, 49% 75%, 0 100%, 0% 50%, 0 0);
+}
+
+.game {
+    position: relative;
+}
+
+img{
+    max-width: 100%;
+    width: 12.5rem;
+    border-radius: var(--br-boarder-radius);
+}
+
+.front, .name {
+    text-align: center;
+    margin: .75em 0;
+}
+
+.front .stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.front .streamers img{
+    border: 1px solid var(--clr-dark);
+   /* &:nth-of-type(1){
+        transform: translateX(50%); NOT WORKING
+    }
+    */
+}
+
+.streamers{
+    display: flex;
+}
+.streamers img{ /*How to add just for selected images in css*/
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+}
+
+
+
+.back{
+    display: none;
+}

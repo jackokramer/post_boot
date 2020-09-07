@@ -11,7 +11,7 @@
     --clr-accent-dark: rgb(163,38, 0);
     --clr-secondary: rgb(0,62,163);
 
-    --br-border-radius: .5em;
+    --br: .5em;
 }
 
 body{
@@ -44,12 +44,20 @@ h1, h2, h3, p{
 img{
     max-width: 100%;
     width: 12.5rem;
-    border-radius: var(--br-boarder-radius);
+    border-radius: 4px;
+}
+
+.front{
+    transition: 250ms;
 }
 
 .front, .name {
     text-align: center;
     margin: .75em 0;
+}
+
+.front  .thumbnail{
+    border-radius: var(--br);
 }
 
 .front .stats{
@@ -79,4 +87,29 @@ img{
 
 .back{
     display: none;
+}
+
+.background{
+    background: #234;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: scale(.2, .9);
+    transition: transform 250ms;
+    border-radius: 5px;
+    opacity: 0
+}
+
+.game:hover .background{
+    opacity: 1;
+    transition: transform 250ms ease-in-out,
+        opacity 100ms linear;
+    transform: scale(1.4, 1.2);
+}
+
+.game:hover .front{
+    transform: translateY(-30%);
 }

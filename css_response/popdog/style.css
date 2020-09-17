@@ -142,7 +142,17 @@ img{
     transform: scale(.2, .9);
     transition: transform 250ms;
     border-radius: 5px;
-    opacity: 0
+    opacity: 0;
+    border-radius: var(--br);
+    overflow: hidden;
+}
+
+.background img{
+    opacity: .3;
+    clip-path: url(#wave);
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .game:hover .background{

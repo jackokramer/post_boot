@@ -1,0 +1,77 @@
+:root{
+    --clr-primary: #ee6352;
+    --clr-body: #333;
+    --clr-bg: #ddd;
+}
+
+body{
+    margin: 0 auto;
+    font-family: basic-sans, sans-serif;
+    background: darkcyan;
+    font-size: 1.125em;
+    background: var(--clr-bg);
+    line-height: 1.6;
+    min-width: 100vh;
+}
+
+h2{
+    margin: 1.25em 0 0;
+}
+
+header{
+    padding: 2em;
+    background: #fff;
+    display: flex;
+    padding: 1em;
+    margin: .75em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__list{
+    height: 100%;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    display: flex;
+    background: skyblue;
+    margin-left: 1em;
+}
+
+.nav{
+    padding: 2px;
+    flex-grow: 1;
+    padding: 2-x;;
+}
+
+.nav__list a{
+    line-height: 3;
+    color: var(--clr-primary);
+    text-decoration: none;
+    padding: 3px;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.nav__list a:hover,
+.nav__list a:focus{
+    color: var(--clr-body);
+}
+
+.nav__list li:nth-of-type(1){
+    margin-left: auto;
+}
+
+
+.nav__list li:nth-of-type(6){
+    margin-top: auto;/*will move the 7th itm to the right*/
+    padding-left: 2px;
+}
+
+.nav__list li:nth-of-type(7){
+    margin-top: auto;/*will move the 7th itm to the right*/
+}

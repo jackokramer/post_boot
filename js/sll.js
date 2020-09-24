@@ -109,12 +109,38 @@ class SLL{
             'length': this.length()
         }
     }
+    back(){
+        let runner = this.head;
+        while(runner.next){
+            runner = runner.next;
+        }
+        return runner.value;
+    }
+    removeBack(){
+        let runner = this.head
+        while(runner.next.next){
+            runner=runner.next;
+        }
+        runner.next =  null;
+        return this;
+    }
+    // add back
+    addBack(value){
+        let runner = this.head;
+        while(runner.next){
+            runner = runner.next;
+        }
+        runner.next = new Node(value);
+        return this;
+    }
 }
 
 let firstSll = new SLL(2);
 console.log(firstSll.addFront(3).addFront(6).addFront(8).addFront(17).displayList())
 //console.log(firstSll.removeFront().displayList())
 
-console.log(firstSll.front())
-console.log(firstSll.contains(7))
+//console.log(firstSll.front())
+//console.log(firstSll.contains(7))
 console.log(firstSll.ultimareAnalysis())
+console.log(firstSll.back());
+console.log(firstSll.addBack(27));

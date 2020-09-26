@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link href="{% static '/css/styles.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Portfolio</title>
+</head>
+<body>
+    <br>
+    <h1 class="text-center p-2 m-4">My Portfolio</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card card-body h-100 border-info" id="profile-wrapper">
+                        <img id="profile-pic" src="{% static 'images/jacko.jpg'%}" alt="">
+                        <hr>
+                        <h4>Hi I'm Jack</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit doloribus in repellat eligendi, similique sed dolorum. Quas provident voluptatum neque aut ipsum fugit ab hic eligendi, cumque, odio nisi tempora.</p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card card-body h-100 border-info">
+                        <h4>My first Job Being thrown to the wolves</h4>
+                        <hr>
+                            <p>Back in 2014 I taught myself javascript while setting up pixels on advertisers websites speaking multiple languages while learning this programming language.</p>
+                            <p>I learned quite a bit on my own and was later pushed on as a responsive designer where I learned bootstrap and Angularjs. I've built a few blogs and helped friends with their eccomerce sites</p>
+                            <ul class="social-links">
+                                <li><a href="https://github.com/jackokramer" class="social-list__link"><i class="fab fa-github-alt"></i></a></li>
+                                <li><img class="social" src="{% static 'mediafiles/instagram.png' %}" alt=""></li>
+                                <li><img class="social" src="{% static 'mediafiles/youtube.png' %}" alt=""></li>
+                                <li><img class="social" src="{% static 'mediafiles/github.png' %}" alt=""></li>
+ 
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+            <div class="row p-3 m-2">
+                <div class="col-md-6 p-2">
+                    <div class="card card-body h-100 border-secondary">
+                        <h4>What I know</h4>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium culpa error iste temporibus dolorum repellat impedit dignissimos rerum id soluta sit voluptatem, maiores animi quisquam enim voluptates explicabo quia.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam est sunt dignissimos at placeat id obcaecati, reprehenderit natus odit distinctio nulla quo quis nisi voluptate sit accusamus vitae non debitis.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card card-body h-100 border-secondary">
+                        <h4>What I'm learning</h4>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, ut ipsam fuga obcaecati, ad quod doloribus molestiae delectus ullam quae veritatis illo aperiam qui veniam corrupti quisquam tempora! Sunt, quae.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia iure iste cupiditate ea illum quae, adipisci nobis labore placeat, provident sapiente minima. Aut quibusdam repellat nisi. Iure expedita itaque est!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card card-body h-100 border-dark">
+                        <h3>What I've completed in the Past</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur autem natus nobis nulla facere. Tenetur illo, velit totam vel aliquam quaerat, sunt enim recusandae corporis, iusto necessitatibus est officia ipsum.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eligendi quos quis unde accusantium! Et quasi nostrum quisquam, in magnam reiciendis illum laudantium similique fugiat nobis, doloribus iure accusantium maxime.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card card-body h-100 border-dark">
+                        <h3>Where I want to go</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laboriosam modi quis cupiditate. In adipisci eos, maxime cupiditate iusto sit reprehenderit, sequi dolores consequatur omnis ad necessitatibus ratione commodi repellendus?</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore eos dignissimos autem doloribus nihil. Dolor fugit laudantium ad placeat amet, quaerat, ratione id quisquam, explicabo unde animi rerum natus error.</p>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

@@ -7,38 +7,20 @@
 <h3>Store</h3>
 
     <div class="row">
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{% static 'images/placeholder.png'%}" alt="">
-            <div class="box-element product">
-                <h6 class="text-center"><strong>Product 1</strong></h6>
-                <hr>
-                    <button class="btn btn-outline-secondary add-btn"> Add to Cart</button>
-                        <a class="btn btn-outline-success" href="#">View</a>
-                        <h4 style="display: inline-block; float: right;">$25</h4>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{% static 'images/placeholder.png'%}" alt="">
-            <div class="box-element product">
-                <h6 class="text-center"><strong>Product 2</strong></h6>
+        {% for product in products %}
+
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{% static 'images/placeholder.png'%}" alt="">
+                <div class="box-element product">
+                    <h6 class="text-center"><strong>Product 1</strong></h6>
                     <hr>
                         <button class="btn btn-outline-secondary add-btn"> Add to Cart</button>
-                        <a class="btn btn-outline-success" href="#">View</a>
-                        <h4 style="display: inline-block; float: right;">$45</h4>
+                            <a class="btn btn-outline-success" href="#">View</a>
+                            <h4 style="display: inline-block; float: right;">$25</h4>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{% static 'images/placeholder.png'%}" alt="">
-            <div class="box-element product">
-                <h6 class="text-center"><strong>Product 3</strong></h6>
-                <hr>
-                    <button class="btn btn-outline-secondary add-btn"> Add to Cart</button>
-                    <a class="btn btn-outline-success" href="#">View</a>
-                    <h4 style="display: inline-block; float: right;">$75</h4>
-            </div>
-        </div>
+            {% endfor %}
     </div>
 
 {% endblock content %}
-
 <!--<img src="{% static 'images/cart.png' %}" alt="">-->

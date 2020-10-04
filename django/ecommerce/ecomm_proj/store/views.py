@@ -80,7 +80,7 @@ def updateItem(request):
     return JsonResponse('Item was added', safe=False)
 
 def processOrder(request):
-    #print('data:', request.body)
+    #print('data': request.body)
     transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
 
@@ -90,7 +90,7 @@ def processOrder(request):
         total = float(data['form']['total'])
         order.transaction_id = transaction_id
 
-        if total == float(order.get_cart_total):
+        if total == float(order.get_cart_total): ## maybe remove float
             order.complete = True
         order.save()
 
@@ -101,7 +101,7 @@ def processOrder(request):
                 address=data['shipping']['address'],
                 city=data['shipping']['city'],
                 state=data['shipping']['state'],
-                zipcode=data['shipping']['zipcode'],
+                zipcode=data['shipping']['zipcode']
             )
     else:
         print('user is not logged in')

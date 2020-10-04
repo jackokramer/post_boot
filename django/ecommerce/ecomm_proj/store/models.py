@@ -76,6 +76,7 @@ class ShippingAddress(models.Model):
     address = models.CharField(max_length=200, null=False) ## Check these null=false
     city = models.CharField(max_length=100, null=False) # Check these null=false
     state = models.CharField(max_length=100, null=False) #check these null=false
+    zipcode = models.CharField(max_length=15, null=False) ## added this here
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

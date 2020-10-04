@@ -104,12 +104,12 @@
 
     function submitFormData(){
         console.log('Payment button Clicked')
-        let userFormData ={
+        const userFormData ={
             'name': null,
             'email': null,
-            'total': total
+            'total': total,
         }
-        let shippingInfo ={
+        const shippingInfo ={
             'address': null,
             'city': null,
             'state': null,
@@ -127,7 +127,7 @@
         }
         console.log('shipping info: ', shippingInfo)
         console.log('User Info', userFormData)
-    }
+ /// } bracket was here
     let url = '/process_order/'
     fetch(url, {
         method: 'POST',
@@ -143,6 +143,7 @@
         alert('Transaction completed');
         window.location.href = "{% url 'store' %}"
     })
+} // line 130 now down here
 
 </script>
 {% endblock content %}

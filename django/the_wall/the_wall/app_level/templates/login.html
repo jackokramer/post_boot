@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>The Wall</title>
+</head>
+<body>
+    <H2>Login and Regiseter</H2>
+    <hr>
+    <form action="/regis" method="post" class="text-center">
+        {% csrf_token %}
+        <h3>Post a Message</h3>
+        <p><input type="text" name="first_name">First Name:</p>
+        <p><input type="text" name="last_name">Last Name:</p>
+        <p>Email:<input type="text" name="email"></p>
+        <p>Password:<input type="text" name="password"></p>
+        <p>Confirm Password: <input type="text" name="c_password"></p>
+        <p><input type="submit" class="btn btn-primary" value="Regiseter"></p>
+    </form>
+
+    <form action="/login" method="post">
+        <p>Email<input type="text" name="email"></p>
+        <p>Password <input type="text" name="password"></p>
+    </form>
+
+
+</body>
+</html>

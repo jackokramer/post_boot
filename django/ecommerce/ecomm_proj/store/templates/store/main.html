@@ -27,7 +27,36 @@
                 return tokenValue;
             }
             const csrftoken = getToken('csrftoken');
-    </script>
+
+    
+function getCookie(name){
+    //split cookie string and get all individual name=value pairs in an array
+    let cookieArr = document.cookie.split(";")
+
+    //loop through the array elements
+    for(let x = 0; x<cookieArr.length; x++){
+        let cookiePair = cookieArr[x].split("=");
+        //White Space removal
+
+        if(name == cookiePair[0].trim()){
+            //decode cookie value and return
+            return decodeURIComponent(cookiePair[1])
+        }
+    }
+    // return null if not found
+    return null;
+}
+
+let cart  = JSON.parse(getCookie('cart'))
+
+if(cart == undefined){
+    cart = {}
+    console.log('Cart created!', cart)
+    document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+}
+console.log('Cart: ', cart)
+
+</script>
     <title>Ecommerce Store</title>
 </head>
 <body>

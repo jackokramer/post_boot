@@ -6,14 +6,14 @@ from django.contrib.auth.models import User
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE) ## importing changing this stuff makes sense to mandate
     name = models.CharField(max_length=80, null=True)
-    email = models.CharField(max_length=80, null=True)
+    email = models.EmailField(max_length=254, null=True)
 
     def __str__(self):
         return self.name
 
 class Product(models.Model):
     name = models.CharField(max_length=100, null=True)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=True) ## know if the item is digital and  does not need to be shipped
     image = models.ImageField(null=True, blank=False)
     #image

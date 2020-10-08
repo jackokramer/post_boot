@@ -77,7 +77,7 @@ def processOrder(request):
     total = float(data['form']['total'])
     order.transaction_id = transaction_id
 
-    if total == float(order.get_cart_total): ## maybe remove float
+    if total == float(order.get_cart_total): ## maybe remove float user cannot manipulate price since it's verified on the back end
         order.complete = True
     order.save()
     if order.shipping == True:
@@ -90,3 +90,6 @@ def processOrder(request):
             zipcode=data['shipping']['zipcode']
         )
     return JsonResponse('Payment Submitted...', safe=False)
+
+
+    ## set up an SSL certification if you decide to push this live

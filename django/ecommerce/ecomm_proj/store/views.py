@@ -4,56 +4,33 @@ import json
 import datetime
 
 from .models import *
-
+from .utils import cookieCart, cartData, guestOrder
 
 # Create your views here.
 def store(request):
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
-    else:
-        ## create an empty cart
-        items = []
-        order= {'get_cart_total': 0, 'get_cart_items':0, 'shipping': False}
-        cartItems = order['get_cart_items']
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
 
     products = Product.objects.all()
     context = {'products': products, 'cartItems': cartItems}
     return render(request, 'store/store.html', context)
 
 def cart(request):
-    if request.user.is_authenticated: #two condtions one authenticated
-        customer = request.user.customer #one to one relation that way
-        order, created = Order.objects.get_or_create(customer=customer, complete=False) ##looks for an existing user if the user does not exist then it creates them
-        items = order.orderitem_set.all() #query child ojects with the parent value to the childvalye and set them to smaller case
-        cartItems = order.get_cart_items
-
-    else:
-        try:
-            cart = json.loads(request.COOKIES['cart'])
-        except:
-            cart = {}
-        print('Cart:', cart)
-        items = []
-        order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False } ##needs to be added to create an unathenticated user
-        cartItems = order['get_cart_items']
-
+    #data = cartData(request)
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
     context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'store/cart.html', context)
 
 def checkout(request):
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
-        items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
-    else:
-        ## create an empty cart
-        items = []
-        order= {'get_cart_total': 0, 'get_cart_items':0, 'shipping': False}
-        cartItems = order['get_cart_items']
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
     context = {'items':items, 'order': order, 'cartItems': cartItems}
     return render(request, 'store/checkout.html', context)
 
@@ -94,19 +71,22 @@ def processOrder(request):
         total = float(data['form']['total'])
         order.transaction_id = transaction_id
 
-        if total == float(order.get_cart_total): ## maybe remove float
-            order.complete = True
-        order.save()
-
-        if order.shipping == True:
-            ShippingAddress.objects.create(
-                customer=customer,
-                order=order,
-                address=data['shipping']['address'],
-                city=data['shipping']['city'],
-                state=data['shipping']['state'],
-                zipcode=data['shipping']['zipcode']
-            )
     else:
-        print('user is not logged in')
+        customer, order = guestOrder(request,data)
+
+    total = float(data['form']['total'])
+    order.transaction_id = transaction_id
+
+    if total == float(order.get_cart_total): ## maybe remove float
+        order.complete = True
+    order.save()
+    if order.shipping == True:
+        ShippingAddress.objects.create(
+            customer=customer,
+            order=order,
+            address=data['shipping']['address'],
+            city=data['shipping']['city'],
+            state=data['shipping']['state'],
+            zipcode=data['shipping']['zipcode']
+        )
     return JsonResponse('Payment Submitted...', safe=False)

@@ -20,9 +20,18 @@ import './index.css'
 const firstBook ={
   img: "img/external-content.duckduckgo.jpg",
   title: 'Van Halen the Full Book on his Life',
-  author: "Niels Clyne"
+  author: "Niels Clyne",
+  info: "This is a book about Eddie Van Halen and how he became the greatest American success story",
 
 }
+
+const secondBook ={
+  img: "img/external-content.duckduckgo-1.jpg",
+  title: 'Neil Peart: The Drum King',
+  author: "Geddy Lee",
+  info: "Written by his bassist this book covers the life of one of the greatest drummers of all time",
+}
+
 /*
 Instead of writting variables to make something more personable add it into a object an make it stand out
 const author = "Niels Clyne";
@@ -35,8 +44,8 @@ function BookList(){
   //<React.Fragment>
   <section className="booklist">
       <h2>Book Info</h2>
-        <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/> 
-        <Book title="random" number={17}/>
+        <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} info={firstBook.info}/> 
+        <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} info={secondBook.info}/>
   </section>
   );
   //</React.Fragment>
@@ -45,16 +54,15 @@ function BookList(){
 // VARIABLES
 
 const Book = (props) =>{
-  console.log(props)
+  const {img, title, author, info} = props
   return (
   <article className="book">
-<img src={props.img} alt="van halen"/>
-<h1>{props.title}</h1>
+<img src={img} alt="van halen"/>
+<h1>{title}</h1>
 <p>By:</p>
-<h3>{props.author}</h3>
-    <p>This is a book about Eddie Van Halen and how he became the greatest American success story</p>
-  <p>{props.job}</p>
-  <p>{props.title}</p>
+<h3>{author}</h3>
+{console.log(props)}
+  <p>{info}</p>
       </article>
     );
 }

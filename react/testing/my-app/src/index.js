@@ -5,6 +5,11 @@ import ReactDom from 'react-dom';
 //CSS
 
 import './index.css'
+import Book from './Book'
+import {books} from './books'
+import {greeting} from './testing/testing'
+
+
 //stateless functional component
 //always returns JSX
 //JSX Rules 
@@ -17,20 +22,7 @@ import './index.css'
 
 //Nested App Component, React Tools
 
-const firstBook ={
-  img: "img/external-content.duckduckgo.jpg",
-  title: 'Van Halen the Full Book on his Life',
-  author: "Niels Clyne",
-  info: "This is a book about Eddie Van Halen and how he became the greatest American success story",
 
-}
-
-const secondBook ={
-  img: "img/external-content.duckduckgo-1.jpg",
-  title: 'Neil Peart: The Drum King',
-  author: "Geddy Lee",
-  info: "Written by his bassist this book covers the life of one of the greatest drummers of all time",
-}
 
 /*
 Instead of writting variables to make something more personable add it into a object an make it stand out
@@ -39,13 +31,20 @@ const title = 'Van Halen the Full Book on his Life'
 const image = "img/external-content.duckduckgo.jpg"
 */
 
+
 function BookList(){
+  console.log(greeting)
   return (
   //<React.Fragment>
   <section className="booklist">
       <h2>Book Info</h2>
-        <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} info={firstBook.info}/> 
-        <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} info={secondBook.info}/>
+      {books.map((book, index)=>{
+      return(
+        <div>
+                  <Book key={book.id} {...book}></Book>
+        </div>
+      );
+      })}
   </section>
   );
   //</React.Fragment>
@@ -53,19 +52,6 @@ function BookList(){
 }
 // VARIABLES
 
-const Book = (props) =>{
-  const {img, title, author, info} = props
-  return (
-  <article className="book">
-<img src={img} alt="van halen"/>
-<h1>{title}</h1>
-<p>By:</p>
-<h3>{author}</h3>
-{console.log(props)}
-  <p>{info}</p>
-      </article>
-    );
-}
 
 /*
 const Image = () => <img src="img/external-content.duckduckgo.jpg" alt=""/>

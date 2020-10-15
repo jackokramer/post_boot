@@ -38,3 +38,7 @@ body {
 .book h3 {
   letter-spacing: 2px;
 }
+
+.book p {
+  margin-top: 0.5rem;
+}

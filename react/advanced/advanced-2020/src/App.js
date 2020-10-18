@@ -15,7 +15,14 @@ import React from 'react';
 //import Setup from "./tutorial/4-forms/setup/1-controlled-inputs";
 //import Setup from "./tutorial/4-forms/setup/2-multiple-inputs";
 //import Setup from "./tutorial/5-useRef/setup/1-useRef-basics";
-import Setup from "./tutorial/6-useReducer/setup";
+//import Setup from "./tutorial/6-useReducer/setup";
+//import Setup from "./tutorial/7-prop-drilling/setup/1-prop-drilling";
+//import Setup from "./tutorial/8-useContext/setup/1-context-api";
+//import Setup from "./tutorial/9-custom-hooks/setup/1-fetch-example"
+//import Setup from "./tutorial/10-prop-types/setup/index"
+//import Setup from "./tutorial/11-react-router/setup"
+import Setup from "./tutorial/12-memo-useMemo-useCallback/setup"
+
 
 
 
@@ -24,9 +31,8 @@ function App() {
   return (
     <div className='container'>
       <h2>Advanced Tutorial</h2>
-            <h3>UseReducer</h3>
-
       <Setup />
+      <h1></h1>
     </div>
   );
 }

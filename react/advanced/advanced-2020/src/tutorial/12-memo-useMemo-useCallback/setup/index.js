@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+//useMemo is a hook memo is a method
 import { useFetch } from '../../9-custom-hooks/final/2-useFetch';
 
 const url = 'https://course-api.netlify.app/api/javascript-store-products';
 // every time props or state changes, component re-renders
 const calculateMostExpensive = (data) => {
-  console.log('hello ');
+  //console.log('hello ');
   return (
     data.reduce((total, item) => {
       const price = item.fields.price;
@@ -22,7 +23,7 @@ const Index = () => {
 
   const addToCart = useCallback(() => {
     setCart(cart + 1);
-  }, [cart]);
+  }, [cart]); // might be tempted to create a function for the initial render
 
   const mostExpensive = useMemo(() => calculateMostExpensive(products), [
     products,
@@ -41,7 +42,7 @@ const Index = () => {
   );
 };
 
-const BigList = React.memo(({ products, addToCart }) => {
+const BigList = React.memo(({ products, addToCart }) => { // memo example
   useEffect(() => {
     console.log('big list called');
   });

@@ -8,6 +8,8 @@ type Post{
     username: String!
     comments: [Comment]!
     likes: [Like]!
+    likeCount: Int!
+    commentCount: Int!
 }
 type Comment{
     id: ID!
@@ -45,5 +47,8 @@ input RegisterInput {
         createComment(postId: String!, body:String!): Post!
         deleteComment(postId: ID!, commentId: ID!): Post!
         likePost(postId: ID!): Post!
+    }
+    type Subscription{
+        newPost: Post!
     }
 `;

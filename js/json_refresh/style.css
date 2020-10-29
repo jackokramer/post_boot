@@ -1,0 +1,14 @@
+#bulbuasor {
+  background-color: #588c94;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+#more-info {
+  display: flex;
+}
+
+p {
+  text-align: center;
+}

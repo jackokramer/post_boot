@@ -1,0 +1,12 @@
+{
+    "size": "double extra large",
+    "price": 25.90,
+    "toppings": ["mushrooms", "peperoni", "basil"],
+    "extra cheese": false,
+    "delivery": true,
+    "customer": {
+        "name": "Jason Colins",
+        "phone": null,
+        "email": "jasoncollins@gmail.com"
+    }
+}

@@ -1,4 +1,4 @@
-#!/Users/jackquentinkramer/Desktop/post_doj/django/logs/bin/python3
+#!/Users/jackquentinkramer/Desktop/post_doj/logz/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

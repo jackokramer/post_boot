@@ -1,6 +1,6 @@
 import json #from products.json
 
-data_JSON = """
+data_JSON = ""
 {
     "size": "large",
     "price": 21.22,
@@ -11,7 +11,7 @@ data_JSON = """
     "email": 'andyirons@gmail.com'
     }
 }
-"""
+""
 
 data_dict = json.loads(data_JSON)
 

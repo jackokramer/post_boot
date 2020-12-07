@@ -19,5 +19,4 @@ from app_level import views
 
 urlpatterns = [
     path('', views.index),
-    path('/stuff', views.process)
 ]

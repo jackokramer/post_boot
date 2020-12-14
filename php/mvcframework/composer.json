@@ -1,0 +1,15 @@
+{
+    "name": "jackquentinkramer/mvcframework",
+    "authors": [
+        {
+            "name": "jackokramer",
+            "email": "jackokramer@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\":"./"
+        }
+    },
+    "require": {}
+}

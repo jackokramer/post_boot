@@ -16,6 +16,8 @@
     <title>Hello, world!</title>
   </head>
   <body>
+  <h1>Home</h1>
+  <h3>Welcome <?php echo $name ?></h3>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">Home</a>

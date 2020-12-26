@@ -14,7 +14,13 @@
  */
 
  function depositProfit(deposit, rate, threshold) {
-    const pushThrew = deposit+rate
+     let currentAccount = deposit;
+     let year = 0;
+     while (threshold> currentAccount){
+        currentAccount += currentAccount(rate/100); 
+        year ++
+     }
+     return year
 }
 
 

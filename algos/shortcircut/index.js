@@ -46,3 +46,5 @@ const response = "JohnDoe";
 const hasValidEmail = true;
 const user = hasValidEmail && (response || "guest");
 // console.log("user: ", user);
+
+console.log('JumboJoe')

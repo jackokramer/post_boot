@@ -10,7 +10,6 @@ function resetNegatives(arr){
 }
 
 console.log(resetNegatives([1,2,-3,4,5,-7]))
-
 //Given an array, move all values forward by one index, dropping the first and leaving a ‘0’ value at the end.  For example moveForward( [1,2,3]) should return [2,3,0].
 
 function moveForward(arr){
@@ -37,7 +36,6 @@ let results = reverseArray([1,4,5,6,22])
 console.log(results)
 
 //Create a function that changes a given array to list each original element twice, retaining original order.  Have the function return the new array.  For example repeatTwice( [4,”Ulysses”, 42, false] ) should return [4,4, “Ulysses”, “Ulysses”, 42, 42, false, false].
-
 function doubleVision(arr){
     for(let z = arr.length-1; z>=0; z--){
         arr[2*z+1] = arr[z]

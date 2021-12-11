@@ -1,4 +1,4 @@
-//sll are effeicnietn because the place in storage is at the previous node
+//sll are effeicnietn because the place in storage is at the previous node/s
 
 class Node{
     constructor(value){

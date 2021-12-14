@@ -12,7 +12,7 @@ function printNames(names){
     }
 printNames(beatles);
 */
-
+//sleep
 // Destructoring
 
 // destructoring assignment syntax is a javascript expression that makes it possible to unpack values from arrays, or properties from objects into disticnt variables.
